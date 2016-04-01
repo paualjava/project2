@@ -1,0 +1,40 @@
+﻿ALTER TABLE  `shop` ADD  `sort_order` TINYINT( 4 ) NULL DEFAULT  '0' COMMENT  '排序' AFTER  `ucoin_present` ;
+UPDATE  `shop` SET  `sort_order` =  '50' WHERE  `shop`.`sid` =21 LIMIT 1 ;
+UPDATE  `shop` SET  `sort_order` =  '60' WHERE  `shop`.`sid` =22 LIMIT 1 ;
+UPDATE  `shop` SET  `sort_order` =  '70' WHERE  `shop`.`sid` =12 LIMIT 1 ;
+UPDATE  `shop` SET  `sort_order` =  '80' WHERE  `shop`.`sid` =13 LIMIT 1 ;
+UPDATE  `shop` SET  `sort_order` =  '90' WHERE  `shop`.`sid` =14 LIMIT 1 ;
+UPDATE  `shop` SET  `sort_order` =  '100' WHERE  `shop`.`sid` =26 LIMIT 1 ;
+
+
+ALTER TABLE `stat_card_collection` CHANGE `money` `money` INT(10) NOT NULL COMMENT '输赢金额';
+
+ALTER TABLE  `shop_buy_info` ADD  `diamond` INT( 10 ) NULL DEFAULT  '0' AFTER  `receipt_data` ;
+
+
+CREATE TABLE `shop_buy_info` (
+  `bid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增id',
+  `uid` int(10) NOT NULL COMMENT '会员编号',
+  `product_id` varchar(200) NOT NULL COMMENT '产品编号',
+  `bundle` varchar(800) NOT NULL COMMENT 'bundle',
+  `serial_number` varchar(200) NOT NULL COMMENT '序列号',
+  `receipt_data` text COMMENT '交易凭证',
+  `type` tinyint(1) unsigned NOT NULL COMMENT '1:开始 2:成功 3:失败',
+  `postdate` int(11) unsigned NOT NULL COMMENT '时间',
+  PRIMARY KEY (`bid`),
+  KEY `uid` (`uid`),
+  KEY `product_id` (`product_id`),
+  KEY `postdate` (`postdate`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='购买' AUTO_INCREMENT=1;
+
+
+
+CREATE TABLE IF NOT EXISTS `friend_collect` (
+  `cid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `uid_from` int(11) unsigned NOT NULL,
+  `uid_to` int(11) unsigned NOT NULL COMMENT '目标会员ID',
+  `initiating_time` datetime NOT NULL COMMENT '发起时间',
+  PRIMARY KEY (`cid`),
+  KEY `uid_from` (`uid_from`),
+  KEY `uid_to` (`uid_to`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='好友收藏表' AUTO_INCREMENT=8 ;

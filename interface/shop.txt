@@ -1,0 +1,46 @@
+商城
+
+地址:http://139.196.181.78/yjb/shop
+
+1.在交易将要开始的时候，客户端将该用户的id，要购买什么商品的id，返回一个这次交易的序列号。这时你服务器上这次交易的状态是开始购买
+{
+	action:'buyStart',
+	uid:'50'
+	token:'token'
+	product_id:'com.zby.texaspoker.8'
+	bundle:’com.zby.texaspoker’
+}
+
+  	返回值:
+
+	{"status":0,"message":"数据返回成功","data":"c5bafccdcf3f42280df44a84c9e0c900"}
+
+
+2.当客户端用户取消掉交易。客户端会将用户的id，第一个接口返回来的交易序列号上传。表示这次交易购买失败。
+{
+	action:'buyFailure',
+	serial_number:'serial_number'
+	uid:'11'
+	token:'token'
+}
+
+	返回值:
+
+	{"status":0,"message":"数据返回成功","data":"状态修改成功"}
+
+
+
+3.客户端发起了交易。交易成功后，我会将用户的id,这次交易的序列号，还有苹果那边的返回的交易凭证上传。服务器就需要去验证凭证了，将凭证的信息跟你服务器的数据库的数据进行对比。
+{
+	action:'shopBuyCheck',
+	uid:'11'
+	token:'token'
+	serial_number:'serial_number'
+	apptransactionid:'1332'
+	receipt_data:'receipt_data'
+	diamond:'diamond'
+}
+
+	返回值:
+	
+	{"status":0,"message":"数据返回成功","data":{"buy":"1","message":"购买成功}}

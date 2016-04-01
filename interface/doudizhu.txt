@@ -1,0 +1,390 @@
+1.个人信息
+{
+	action:'stat_my_info_doudizhu',
+	uid:'80',
+	token:'token',
+}
+
+	返回值:
+	
+	array(11) {
+	  ["incomeTime"]=>//入局次数
+	  string(1) "6"
+	  ["onceBigger"]=>
+	  string(2) "60"
+	  ["bestStreaking"]=>//单局最大
+	  int(0)
+	  ["winProbability"]=>//获胜率
+	  string(6) "66.67%"
+	  ["winByme"]=>//由我打赢
+	  string(1) "3"
+	  ["winBymePencent"]=>//由我打赢百分比
+	  string(6) "66.67%"
+	  ["won"]=>//总盈利
+	  int(130)
+	  ["uname"]=>
+	  string(6) "鲁云"
+	  ["avatar_thumb"]=>
+	  string(52) "resource/upload/photos/20160126164426202363thumb.png"
+	  ["signature"]=>
+	  string(0) ""
+	  ["diamond"]=>
+	  string(4) "9500"
+	}
+
+
+2.数据统计
+{
+	action:'stat_my_statistics_doudizhu',
+	uid:'80',
+	token:'token',
+}
+
+	返回值:
+	
+	
+	array(10) {
+	  ["incomeTime"]=> //入局次数
+	  string(1) "4"
+	  ["onceBigger"]=>//单局最大
+	  string(3) "120"
+	  ["bestStreaking"]=>
+	  int(0)
+	  ["grandPick"]=>//累计闷搁
+	  string(1) "0"
+	  ["grandOnePick"]=>//累计头搁
+	  string(1) "0"
+	  ["grandShowPick"]=>//累计摊打
+	  string(1) "0"
+	  ["winProbability"]=>//获胜率
+	  string(6) "50.00%"
+	  ["winByme"]=>//由我打赢
+	  string(1) "2"
+	  ["winBymePencent"]=>//由我打赢百分百
+	  string(6) "50.00%"
+	  ["won"]=>//总盈利
+	  int(90)
+	}
+
+
+
+3.个人战绩
+{
+	action:'stat_my_person_doudizhu',
+	uid:'80',
+	token:'token',
+	date:'20160316',
+}
+
+	返回值:
+
+	array(2) {
+	  [0]=>
+	  array(4) {
+	    ["bname"]=>
+	    string(4) "High"
+	    ["starttime"]=>
+	    string(5) "10:47"
+	    ["identity"]=>
+	    string(6) "农民"
+	    ["money"]=>
+	    string(3) "-20"
+	  }
+	  [1]=>
+	  array(4) {
+	    ["bname"]=>
+	    string(1) "l"
+	    ["starttime"]=>
+	    string(5) "04:35"
+	    ["identity"]=>
+	    string(6) "农民"
+	    ["money"]=>
+	    string(2) "60"
+	  }
+	}
+
+
+
+4.一局打完的战绩表api：
+{
+	action:'getBoardResult_doudizhu',
+	bid:'1088'
+	uid:'80',
+	token:'token',
+	date:'20160316',
+}
+
+	返回值:
+
+	array(3) {
+	  ["info"]=>
+	  array(1) {
+	    [0]=>
+	    array(29) {
+	      ["round_id"]=> 
+	      string(1) "6"
+	      ["bid"]=>     //牌桌
+	      string(2) "71"
+	      ["seq"]=>     //牌桌的一局
+	      string(1) "1"
+	      ["starttime"]=>
+	      string(10) "1457939476"
+	      ["seat1_uid"]=>   //座位1 uid
+	      string(2) "80"
+	      ["seat2_uid"]=>   //座位2 uid
+	      string(2) "82"
+	      ["seat3_uid"]=>   //座位3 uid
+	      string(2) "74"
+	      ["seat4_uid"]=>   //座位4 uid
+	      string(1) "0"
+	      ["seat1_money"]=>   //座位1 赢的钱
+	      string(3) "120"
+	      ["seat2_money"]=>   //座位2 赢的钱
+	      string(3) "-60"
+	      ["seat3_money"]=>   //座位3 赢的钱
+	      string(3) "-60"
+	      ["seat4_money"]=>   //座位4 赢的钱
+	      string(1) "0"
+	      ["selected_uid"]=>   //首位叫档uid
+	      string(1) "1"
+	      ["landlord_uid"]=>   //地主 did
+	      string(1) "1"
+	      ["basecard"]=>    //底牌，如:S1|G0|H13|C4
+	      string(9) "S6|S4|C13"
+	      ["points"]=>      //终底分
+	      string(2) "30" 
+	      ["wisdomking"]=>  //明王
+	      string(1) "0"
+	      ["pick"]=>       //闷撂1,头撂2
+	      string(1) "0"
+	      ["waste"]=>     //荒番
+	      string(1) "0"
+	      ["spread"]=>    //摊打
+	      string(1) "0"
+	      ["checkin"]=>   //报到1,双报到2
+	      string(1) "0"
+	      ["spring"]=>    //是否春天，0没春天，1有春天
+	      string(1) "0"
+	      ["multiple"]=>  //倍数
+	      string(1) "1"
+	      ["winner_seatid"]=>  //胜利者坐位ID(最先出完手牌)
+	      string(2) "80"
+	      ["date"]=>
+	      string(10) "2016-03-16"
+	      ["time"]=>
+	      string(19) "0000-00-00 00:00:00"
+	      ["avatar_seat1_thumb"]=>
+	      string(51) "resource/upload/photos/2016012916561567017thumb.png"  //座位1头像
+	      ["avatar_seat2_thumb"]=>
+	      string(52) "resource/upload/photos/20160129180125867768thumb.png" //座位2头像
+	      ["avatar_seat3_thumb"]=>
+	      string(52) "resource/upload/photos/20160126163431653657thumb.png" //座位3头像
+	    }
+	  ["allhand"]=>
+	  string(1) "1"
+	  ["maxpot"]=>
+	  string(3) "120"
+	}
+
+5.柱状图数据
+{
+	action:'stat_money_date_count_doudizhu',
+	uid:'80',
+	token:'token',
+	beginDate :'开始日期'   格式 20160101[必填]
+	endDate :'开始日期'   格式 20160103[必填]
+}
+
+	返回值:
+
+	array(3) {
+	  [1]=>
+	  array(2) {
+	    ["date"]=>
+	    string(10) "2016-03-15"
+	    ["money"]=>
+	    int(-30)
+	  }
+	  [2]=>
+	  array(2) {
+	    ["date"]=>
+	    string(10) "2016-03-16"
+	    ["money"]=>
+	    int(100)
+	  }
+	  [3]=>
+	  array(2) {
+	    ["date"]=>
+	    string(10) "2016-03-17"
+	    ["money"]=>
+	    int(30)
+	  }
+	}
+
+6.俱乐部战绩列表：
+{
+	action:'stat_club_board_doudizhu',
+	date:'2016-02-22'
+	clubid:'12
+	start:'0
+	count:'20
+}
+
+	返回值:
+
+	array(1) {
+	  [0]=>
+	  array(16) {
+	    ["bid"]=>
+	    string(2) "26"
+	    ["bname"]=>
+	    string(1) "5"
+	    ["createrid"]=>
+	    string(2) "66"
+	    ["createtime"]=>
+	    string(10) "1457924383"
+	    ["duration"]=>
+	    string(2) "60"
+	    ["points"]=>
+	    string(0) ""
+	    ["bmoney"]=>
+	    string(2) "30"
+	    ["maxseat"]=>
+	    string(1) "3"
+	    ["accessid"]=>
+	    string(6) "421557"
+	    ["clubid"]=>
+	    string(2) "38"
+	    ["clubcommissionratio"]=>
+	    string(1) "0"
+	    ["boardstatus"]=>
+	    string(1) "2"
+	    ["clubcommission_uid"]=>
+	    string(1) "0"
+	    ["clubcommission"]=>
+	    string(4) "0.00"
+	    ["date"]=>
+	    string(10) "2016-03-14"
+	    ["time"]=>
+	    string(19) "2016-03-14 10:59:43"
+	  }
+	}
+
+
+之前的几个个接口
+
+1.我的俱乐部信息
+{
+	action:'club_my_doudizhu',
+	uid:'50'
+	token:'token',
+}
+
+	返回值:
+
+	array(1) {
+	  [0]=>
+	  array(17) {
+	    ["cid"]=>
+	    string(2) "91"
+	    ["name"]=>
+	    string(11) "ddz club001"
+	    ["logo"]=>
+	    string(1) "1"
+	    ["desc"]=>
+	    string(1) "2"
+	    ["region_id"]=>
+	    string(1) "3"
+	    ["province"]=>
+	    string(1) "0"
+	    ["city"]=>
+	    string(1) "0"
+	    ["district"]=>
+	    string(1) "0"
+	    ["uid_create"]=>
+	    string(2) "74"
+	    ["add_time"]=>
+	    string(19) "2015-12-08 10:40:54"
+	    ["money"]=>
+	    string(3) "202"
+	    ["wallpapers"]=>
+	    string(0) ""
+	    ["member_max"]=>
+	    string(2) "50"
+	    ["member_current"]=>
+	    string(1) "1"
+	    ["leixing"]=>
+	    string(1) "2"
+	    ["region_name"]=>
+	    string(6) "安徽"
+	    ["region_type"]=>
+	    string(1) "1"
+	  }
+	}
+
+
+
+2.单人牌局查询
+{
+	action:'stat_board_history_doudizhu',
+	uid:'50'
+	token:'token',
+	targetuid:'23
+	beginDate:'20160225'
+	endDate:'20160226'
+}
+	返回值:
+	
+	array(2) {
+	  [0]=>
+	  array(8) {
+	    ["bid"]=>
+	    string(4) "1654"
+	    ["seq"]=>
+	    string(1) "2"
+	    ["bname"]=>
+	    string(1) "D"
+	    ["won"]=>
+	    string(2) "-2"
+	    ["date"]=>
+	    string(10) "2016-03-10"
+	    ["time"]=>
+	    string(19) "2016-03-10 17:46:52"
+	    ["cards"]=>
+	    array(2) {
+	      ["cards"]=>
+	      string(6) "C3|H14"
+	      ["commoncard"]=>
+	      string(15) "H2|D4|S4|D10|S7"
+	    }
+	    ["isFavi"]=>
+	    string(1) "0"
+	  }
+	  [1]=>
+	  array(8) {
+	    ["bid"]=>
+	    string(4) "1654"
+	    ["seq"]=>
+	    string(1) "1"
+	    ["bname"]=>
+	    string(1) "D"
+	    ["won"]=>
+	    string(1) "1"
+	    ["date"]=>
+	    string(10) "2016-03-10"
+	    ["time"]=>
+	    string(19) "2016-03-10 17:45:36"
+	    ["cards"]=>
+	    array(2) {
+	      ["cards"]=>
+	      string(6) "S14|H9"
+	      ["commoncard"]=>
+	      string(15) "S6|C8|S12|S4|S2"
+	    }
+	    ["isFavi"]=>
+	    string(1) "0"
+	  }
+	}
+
+
+
