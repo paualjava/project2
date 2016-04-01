@@ -1,0 +1,272 @@
+﻿CREATE TABLE `ddz_board` (
+  `bid` int(11) NOT NULL DEFAULT '0' COMMENT '牌桌id',
+  `bname` varchar(30) DEFAULT NULL COMMENT '牌桌名',
+  `createrid` int(11) NOT NULL DEFAULT '0'  COMMENT '创建者ID',
+  `createtime` bigint(20) DEFAULT NULL COMMENT '创建时间',
+  `duration` int(11) DEFAULT NULL  COMMENT '牌桌时长',
+  `bmoney` int(11) DEFAULT NULL COMMENT '最低入桌金额',
+  `maxseat` int(11) DEFAULT NULL COMMENT '最大入坐人数',
+  `accessid` int(11) DEFAULT NULL COMMENT '邀请码',
+  `clubid` int(11) DEFAULT NULL COMMENT '俱乐部id 如果为-1 表示非俱乐部牌桌',
+  `clubcommissionratio` int(11) NOT NULL DEFAULT '0' COMMENT '俱乐部佣金比例',  
+
+  `boardstatus` int(11) DEFAULT NULL COMMENT '牌桌状态:0 未开始 1 进行中 2 已结束',
+
+  `clubcommission_uid` int(11) NOT NULL DEFAULT '0' COMMENT '贡献俱乐部佣金者的玩家ID', 
+  `clubcommission` int(11) NOT NULL DEFAULT '0' COMMENT '俱乐部佣金', 
+  `date` date NOT NULL,
+  `time` datetime NOT NULL,
+  PRIMARY KEY (`bid`,`createrid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='牌桌';
+
+
+
+
+CREATE TABLE `ddz_board_round` (
+  `round_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `bid` int(11) NOT NULL DEFAULT '0' COMMENT '牌桌id',
+  `seq` int(11) NOT NULL DEFAULT '0' COMMENT '牌桌上面第几局',
+  `starttime` bigint(20) DEFAULT NULL COMMENT '开始时间',
+  
+  `seat1_uid` int(11) NOT NULL DEFAULT '0' COMMENT '坐位1玩家ID',
+  `seat2_uid` int(11) NOT NULL DEFAULT '0' COMMENT '坐位2玩家ID',
+  `seat3_uid` int(11) NOT NULL DEFAULT '0' COMMENT '坐位3玩家ID',
+  `seat4_uid` int(11) NOT NULL DEFAULT '0' COMMENT '坐位4玩家ID',
+
+  `seat1_money` int(11) NOT NULL DEFAULT '0' COMMENT '坐位1盈利',
+  `seat2_money` int(11) NOT NULL DEFAULT '0' COMMENT '坐位2盈利',
+  `seat3_money` int(11) NOT NULL DEFAULT '0' COMMENT '坐位3盈利',
+  `seat4_money` int(11) NOT NULL DEFAULT '0' COMMENT '坐位4盈利',
+  
+  
+  `selected_seatid` int(11) NOT NULL DEFAULT '0' COMMENT '首位叫档坐位号',
+  `landlord_seatid` int(11) NOT NULL DEFAULT '0' COMMENT '地主坐位号',  
+  `basecard` varchar(45) NOT NULL COMMENT '底牌，如:S1|G0|H13|C4', 
+  `points` int(11) NOT NULL DEFAULT '0' COMMENT '最终底分',
+  `wisdomking` int(11) NOT NULL DEFAULT '0' COMMENT '明王',
+  `pick` int(11) NOT NULL DEFAULT '0' COMMENT '闷撂1,头撂2',  
+  `waste` int(11) NOT NULL DEFAULT '0' COMMENT '荒番',  
+  `spread` int(11) NOT NULL DEFAULT '0' COMMENT '摊打',  
+  `checkin` int(11) NOT NULL DEFAULT '0' COMMENT '报到1,双报到2', 
+  `spring_seatid` int(11) NOT NULL DEFAULT '0' COMMENT '春天坐位ID',   
+  `multiple` int(11) NOT NULL DEFAULT '0' COMMENT '倍数',
+  `winner_seatid` int(11) NOT NULL DEFAULT '0' COMMENT '胜利者坐位ID(最先出完手牌)', 
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3087 DEFAULT CHARSET=utf8 COMMENT='牌桌的一局';
+
+CREATE TABLE `ddz_board_round_player` (
+  `round_player_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `round_id` int(10) unsigned NOT NULL COMMENT '牌桌的一局id',
+  `bid` int(10) unsigned NOT NULL COMMENT '牌桌id',
+  `seq` tinyint(3) unsigned NOT NULL COMMENT '牌桌上面第几局',
+  `uid` int(10) unsigned NOT NULL COMMENT '玩家ID',
+  `status` tinyint(3) unsigned NOT NULL COMMENT '状态 1玩牌，2围观',
+  `seat` tinyint(3) unsigned NOT NULL COMMENT '坐位号',
+  `onlookers_seat` tinyint(3) unsigned NOT NULL COMMENT '围观的坐位号',
+  `callrob` int(11) NOT NULL DEFAULT '0' COMMENT '档数',
+  `landlord` int(11) NOT NULL DEFAULT '0' COMMENT '是否要坐地主',
+  `points` int(11) NOT NULL DEFAULT '0' COMMENT '坐位1底分', 
+  `bombnumber` int(11) NOT NULL DEFAULT '0' COMMENT '炸弹数'
+  `money` int(11) NOT NULL DEFAULT '0' COMMENT '盈利',
+  `cards` varchar(45) NOT NULL COMMENT '所有手牌(包括底牌) 如:S1|G0|H13|C4',
+  `outcards` varchar(45) NOT NULL COMMENT '已出手牌下标，如:1|2|6|14|34|',
+  `outcardsnumber` varchar(45) NOT NULL COMMENT '每次数牌个数，如:5|2|5', 
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4562 DEFAULT CHARSET=utf8 COMMENT='一局中的一个玩家';
+
+
+
+
+
+http://note.youdao.com/groupshare/web/file.html?token=D54DA5C8ED6343F296626477BB7DF3C5&gid=20879740
+这个地址有写可以参考
+
+当月盈亏=当月所有牌局盈亏总和
+当天盈亏=当天所有牌局盈亏总和
+牌局名称
+单局开始时间
+单局用户角色
+单局盈亏
+
+
+
+俱乐部名称
+当月盈亏=当月在A俱乐部牌局盈亏总和??
+当天盈亏=当天在A俱乐部牌局的盈亏总和
+用户昵称
+入局率=在A俱乐部牌局入局数/（在A俱乐部牌局入局数+在A俱乐部牌局围观局数）
+盈利=在A俱乐部牌局的盈亏总和
+胜率=在A俱乐部获胜次数（包含同伴打赢）/在A俱乐部牌局入局数
+
+
+=================================================================================================
+个人数据界面
+注：历史所有桌上
+
+
+获胜率=获胜次数（包含同伴打赢）/入局数
+由你打赢牌局率=由你最先出完牌的局数（不包含同伴打赢）/入局数
+总盈利=所有参与的牌局盈亏总和
+入局次数：参与的牌局次数
+单局最大：参与的牌局中盈利最大
+最高连胜：参与的牌局中最高连续打赢牌局（包含同伴打赢）的连续次数
+累计闷撂：4人斗地主中闷撂次数总和
+累计头撂：4人斗地主中头撂次数总和
+累计摊大：4人斗地主中摊打次数总和
+
+
+=================================================================================================
+查看用户信息界面
+注：历史所有桌上
+
+钻石：个人账户中钻石数量
+入局率= 入局数/（入局数+围观局数）
+单局最大：历史所有桌上参与的牌局中盈利最大
+U币：个人账户中U币数量
+胜率 = 获胜次数（包含同伴打赢）/入局数 
+最高连胜 = 参与的牌局中最高连续打赢牌局（包含同伴打赢）的连续次数
+
+=================================================================================================
+牌局战绩表界面
+
+我的盈亏 : 一个桌上的盈亏值 
+我的入局次数 : 一个桌上的入局次数
+我的单局盈利最大 : 一个桌上的一局中最大盈利值 
+我的最高连胜 : 一个桌上的最高连续胜利次数（包括同伴打赢）
+牌局中剩余U币最多玩家  :  一个桌上的参与游戏的所有玩家中账户中UB最多的玩家名
+U币最多玩家盈亏 : 一个桌上的参与游戏的所有玩家中UB最多的值
+牌局中赢钱最多玩家 : 一个桌上的参与游戏的所有玩家中赢钱最多的玩家名
+赢钱最多玩家盈亏 : 一个桌上的参与游戏的所有玩家中赢钱最多的值
+牌局中输钱最多玩家: 一个桌上的参与游戏的所有玩家中输钱最多的玩家名
+输钱最多玩家盈亏: 一个桌上的参与游戏的所有玩家中输钱最多的值
+玩家用户名: 一个桌上的参与游戏的所有玩家的用户名
+入局数: 一个桌上的参与游戏的所有玩家的入局数
+盈亏: 一个桌上的累计输赢值
+
+
+/////////////1到6所有字段都和德州一致
+//////////////////////////////////////////////////////////////////////////////////////////
+1.我的俱乐部信息	传入:  @"action":@"club_my_doudizhu”,
+                     @"uid”:,用户id
+                     @"token”用户token
+输出://我的俱乐部和我加入的俱乐部
+@property (nonatomic,strong)NSString *nameString;俱乐部名字
+@property (nonatomic,strong)NSString *boolStr;
+@property (nonatomic,strong)NSString *add_time;
+@property (nonatomic,strong)NSString *agency_id;
+@property (nonatomic,strong)NSNumber *cid;
+@property (nonatomic,strong)NSString *city;
+@property (nonatomic,strong)NSString *desc;
+@property (nonatomic,strong)NSString *district;
+@property (nonatomic,strong)NSString *hot_sort_id;
+@property (nonatomic,strong)NSString *is_hot;
+@property (nonatomic,strong)NSString *logo;
+@property (nonatomic,strong)NSString *member_current;俱乐部现有人数
+@property (nonatomic,strong)NSString *member_max;俱乐部最大人数
+@property (nonatomic,strong)NSString *money;
+@property (nonatomic,strong)NSString *name;
+@property (nonatomic,strong)NSString *parent_id;
+@property (nonatomic,strong)NSString *province;
+@property (nonatomic,strong)NSString *region_id;
+@property (nonatomic,strong)NSString *region_name;
+@property (nonatomic,strong)NSString *region_type;
+@property (nonatomic,strong)NSString *uid_create;
+@property (nonatomic,strong)NSArray  *wallpapers;
+//////////////////////
+2.获取已收藏牌局数
+				输入:@“action":@"borad_collection_list_doudizhu",
+                                @"uid":
+                                @"token":
+                                @"count":
+                                @"start":
+
+输出: 牌局数 	alreadyCollectCount
+
+/////////////////////////////
+3.收藏牌局
+			"action":@"borad_collection_add_doudizhu",
+                              @"uid":
+                              @"token":
+                              @"type":type
+                              @"bid":model.bid,
+                              @"hand_card":cards,
+                              @"common_card":commonCard,
+                              @"seq":model.seq,
+                              @"money":model.won
+
+输出:成功,失败
+////////////
+4.单人牌局查询
+	action":@"stat_board_history_doudizhu",
+                            @"uid":
+                            @"token":
+                            @"targetuid":
+                            @"beginDate":
+                            @"endDate":
+
+输出:@property (nonatomic,strong)NSString *bid;
+@property (nonatomic,strong)NSString *bname;
+@property (nonatomic,strong)NSString *cards;
+@property (nonatomic,strong)NSString *creatername;
+@property (nonatomic,strong)NSString *commoncard;
+@property (nonatomic,strong)NSString *date;
+@property (nonatomic,strong)NSString *seq;
+@property (nonatomic,strong)NSString *time;
+@property (nonatomic,strong)NSString *won;
+@property (nonatomic,strong)NSString *isFavi;
+
+
+/////////
+5.俱乐部当天牌局查询
+			@"action":@"stat_club_board_doudizhu",
+                          @"uid":
+                          @"token":
+                          @"date":
+                          @"clubid":
+
+输出
+@property (nonatomic,strong)NSString *bid;
+@property (nonatomic,strong)NSString *bname;
+@property (nonatomic,strong)NSString *createrid;
+@property (nonatomic,strong)NSString *creatername;
+@property (nonatomic,strong)NSString *big;
+@property (nonatomic,strong)NSString *small;
+@property (nonatomic,strong)NSString *duration;
+@property (nonatomic,strong)NSString *chip;
+@property (nonatomic,strong)NSString *seat;
+@property (nonatomic,strong)NSString *createtime;
+@property (nonatomic,strong)NSArray*record;
+@property (nonatomic,strong)NSString *clubid;
+@property (nonatomic,strong)NSString *boardstatus;
+@property (nonatomic,strong)NSString *playercount;
+@property (nonatomic,strong)NSString *accessid;
+@property (nonatomic,strong)NSString *date;
+@property (nonatomic,strong)NSString *time;
+///////////
+6.获取本月度数据
+"action":@"stat_money_date_count_doudizhu",
+                            @"uid":
+                            @"token":
+                            @"beginDate":
+                            @"endDate":
+输出[money:3000,date:11],[money:3000,date:12]
+///////////////////////////////////////////////////////////////////////////////
+/////////////以上所有字段都和德州一致
+///////////////////////////////////////////////////////////////////////////////
+
+7.我的数据统计:"action”:@“get_my_detail_count_doudizhu",
+                            @"uid":
+                            @"token":
+                            @"beginDate":
+                            @"endDate":
+输出:入局次数: incomeTime
+   单局最大: onceBigger
+最高连胜: bestStreaking
+累计闷搁: grandPick
+累计头搁: grandOnePick
+累计摊打: grandShowPick
+获胜率: 	winProbability
+由我打赢: winByme
+总盈利: won
+
+

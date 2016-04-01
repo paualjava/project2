@@ -1,0 +1,88 @@
+
+
+
+clubid":1/*俱乐部ID,非0表示俱乐部建局*/,
+	"clubcommissionratio":3.5 /*俱乐部佣金比例*/
+
+
+
+／／单手牌局信息   
+  bid = 1568;//牌局ID
+        bname = Dsd;／／牌局名称
+        cards =         {
+            cards = "D14|H12”;／／手牌
+            commoncard = "D2|D10|C11|C9|D4”;／／公共牌
+        };
+        date = "2016-03-07”;／／该局当天
+        isFavi = 0;／／是否收藏
+        seq = 6;／／牌桌里第几手牌局
+        time = "2016-03-07 14:46:21”;／／每手牌局结束时间
+        won = "-400”;／／输赢U币
+
+／／俱乐部战绩信息
+  accessid = 118193;／／邀请码
+        bid = 1505;／／牌桌id
+        big = 2;／／大盲
+        bname = Ddd;／／牌桌名称
+        boardstatus = 1;／／牌桌状态
+        chip = 200;／／最小带入
+        clubid = 23;／／俱乐部id
+        createrid = 11;／／创建者id
+        creatername = Paean;／／创建者昵称
+        createtime = 1457193923;／／创建时间
+        date = "2016-03-06”;创建日期
+        duration = 60;／／牌局时长
+        playercount = 2;／／参与牌局人数
+        record = "<null>”;／／打牌过程
+        seat = 1;坐在第几个位置
+        small = 1;小盲
+        time = "2016-03-06 00:05:23”;／／牌局结束时间
+     ／／
+
+
+／／获取个人信息getUserInfoWithUserID
+@property (nonatomic, strong) NSString *region_name;／／地区名称
+@property (nonatomic, strong) NSNumber *region_id;／／地区id
+@property (nonatomic, strong) NSNumber *diamond;／／钻石数量
+@property (nonatomic, strong) NSString *email;／／邮箱
+@property (nonatomic, strong) NSString *grade_name;／／等级名称
+@property (nonatomic, strong) NSNumber *join_club_count;／／加入俱乐部个数
+@property (nonatomic, strong) NSNumber *vip_grade;／／第几等级
+@property (nonatomic, strong) NSNumber *play_count;／／
+@property (nonatomic, strong) NSString *qq_image;／／QQ头像
+@property (nonatomic, strong) NSString *qq_uid;／／qqID
+@property (nonatomic, strong) NSString *webo_image;微博头像
+@property (nonatomic, strong) NSString *webo_uid;／／微博ID
+@property (nonatomic, strong) NSString *wechat_image;／／微信头像
+@property (nonatomic, strong) NSString *wechat_uid;／／微信ID
+@property (nonatomic, strong) NSString *uid;／／个人ID
+@property (nonatomic, strong) NSString *uname;／／个人昵称
+@property (nonatomic, strong) NSString *avatar;／／个人头像
+@property (nonatomic, strong) NSString *avatar_thumb;个人头像（压缩）
+@property (nonatomic, strong) NSNumber *sex;／／性别
+@property (nonatomic, strong) NSString *mobile;／／手机号
+@property (nonatomic, strong) NSString *province;／／省份
+@property (nonatomic, strong) NSString *city;／／城市
+@property (nonatomic, strong) NSString *district;
+@property (nonatomic, strong) NSString *token;
+@property (nonatomic, strong) NSNumber *money;／／U币
+@property (nonatomic, strong) NSString *add_time;／／加入的时间
+@property (nonatomic, strong) NSString *login_time;／／注册时间
+@property (nonatomic, strong) NSString *signature;／／个性签名
+@property (nonatomic, strong) NSNumber *is_verify_friend;／／添加朋友是否需要验证才能添加
+@property (nonatomic, strong) NSString *last_device_id;／／设备信息
+@property (nonatomic, strong) NSNumber *safemode;／／是否开启安全模式 开启如果切换手机要发送验证码验证
+@property (nonatomic, strong) NSString *invite_code;
+@property (nonatomic, strong) NSArray *wallpapers;／／壁纸
+//可以建局多少个数
+@property (nonatomic, strong) NSNumber *card_max_board;／／最大创建牌桌个数
+@property (nonatomic, strong) NSNumber *card_max_board_round_collet;／／最大收藏个数
+@property (nonatomic, strong) NSNumber *card_max_club;／／最大创建俱乐部个数
+@property (nonatomic, strong) NSNumber *card_max_club_member;／／俱乐部的最大成员个数
+
+//月卡年卡参数
+@property (nonatomic, strong) NSString *card_month_begin_time;／／月卡开始时间
+@property (nonatomic, strong) NSString *card_month_end_time;／／月卡结束时间
+@property (nonatomic, strong) NSNumber *card_type;／／卡的类型
+@property (nonatomic, strong) NSString *card_year_begin_time;／／年卡开始时间
+@property (nonatomic, strong) NSString *card_year_end_time;／／年卡结束时间
