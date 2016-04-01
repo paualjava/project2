@@ -1,0 +1,106 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>接口测试</title>
+<script type="application/javascript" src="js/jquery.js"></script>
+<style type="text/css">
+.col {
+	display:inline-block;
+	width:250px;
+}
+.col2 {
+	display:inline-block;
+	width:400px;
+}
+.result_club_my_doudizhu {
+	margin-top:20px;
+}
+form input{padding:3px;}
+body{margin-left:40px;}
+form span{margin:2px 0 4px 0;display:block;}
+form em{ font-style:normal;color:#000;font-weight:normal;}
+form span{color:#000;font-weight:bold;}
+
+</style>
+</head>
+<body>
+<h2>1.查询优惠券</h2>
+<form id="borad_collection_add" name="form1" method="post" action="cha.php">
+  <span>参数: <em class="params">{'params':'{\"action\":\"borad_collection_add\",\"uid\":75,\"token\":\"rbbpjajilhmvauimrnzpynmzxuecjgvj\"}'}</em></span>
+  <label> <span style="display:inline;">地址: </span>
+    <input type="text" name="url_site" id="url_site" value="http://localhost/codeIgnite_yjb/YJB_api/index"  style="width:600px" placeholder="请输入10位整数"/>
+  </label>
+  <label>
+    <input name="act" type="hidden" value="bonus" />
+    <input type="button" name="button" class="borad_collection_add" form_n="borad_collection_add" value="测试接口" />
+  </label>
+</form>
+
+
+<h2>2.查询优惠券</h2>
+<form id="borad_collection_list_doudizhu" name="form1" method="post" action="cha.php">
+  <span>参数: <em class="params">{'params':'{\"action\":\"borad_collection_list_doudizhu\",\"uid\":75,\"token\":\"rbbpjajilhmvauimrnzpynmzxuecjgvj\"}'}</em></span>
+  <label> <span style="display:inline;">地址: </span>
+    <input type="text" name="url_site" id="url_site" value="http://localhost/codeIgnite_yjb/DDZ_api/index"  style="width:600px" placeholder="请输入10位整数"/>
+  </label>
+  <label>
+    <input name="act" type="hidden" value="bonus" />
+    <input type="button" name="button" class="button_submit" form_n="borad_collection_list_doudizhu" value="测试接口" />
+  </label>
+</form>
+
+
+<h2>时间</h2>
+<form id="form_time" name="form1" method="post" action="cha.php">
+  <label>
+  <input type="text" name="search" id="search"  style="width:600px" placeholder="请输入10位整数"/>
+  </label>
+  <label>
+  <input name="act" type="hidden" value="time" />
+  <input type="button" name="button" class="button_submit" form_n="form_time" value="提交" />
+  </label>
+</form>
+<h2>根据手机号查验证码</h2>
+<form id="form_verification_code" name="form1" method="post" action="cha.php">
+  <label>
+  <input type="text" name="search" id="search"  style="width:600px" placeholder="请输入手机号码"/>
+  </label>
+  <label>
+  <input name="act" type="hidden" value="verification_code" />
+  <input type="button" name="button" class="button_submit" form_n="form_verification_code" value="提交" />
+  </label>
+</form>
+<script type="application/javascript">
+$(".button_submit").each(function ()
+{
+	$(this).click(function ()
+	{	alert(type);
+		html=$(this).parent().parent();
+		url_site=html.find("#url_site").val();
+		act=$("#"+$(this).attr("form_n"));
+		type=$(this).attr("form_n");
+		alert(type);
+		if($(".result_"+type).length==0)
+		act.append("<div class='result_"+type+"'></div>");
+		
+		/*if(type=='club_my_doudizhu')
+		params={"params":'{\"action\":\"club_money_history_out\",\"uid\":75,\"cid\":4,\"token\":\"rbbpjajilhmvauimrnzpynmzxuecjgvj\"}'};
+		else if(type=='borad_collection_list_doudizhu')
+		params={"params":'{\"action\":\"borad_collection_list_doudizhu\",\"uid\":75,\"token\":\"rbbpjajilhmvauimrnzpynmzxuecjgvj\"}'};
+		else if(type=='club_money_history_out')
+		params={"params":'{\"action\":\"club_money_history_out\",\"uid\":75,\"cid\":23,\"token\":\"rbbpjajilhmvauimrnzpynmzxuecjgvj\"}'};
+		else if(type=='borad_collection_add')
+		params={"params":'{\"action\":\"club_money_history_out\",\"uid\":75,\"bid\":1,\"seq\":1,\"hand_card\":\"\",\"common_card\":\"\",\"type\":1,\"token\":\"rbbpjajilhmvauimrnzpynmzxuecjgvj\"}'};
+		else
+		alert('sdflj');
+		$.post(url_site,params,function (res)
+		{
+			//$(".result_"+act).html(res);
+		},"json")*/
+	})
+})
+</script>
+</body>
+</html>
