@@ -1,0 +1,42 @@
+html, body
+{
+	height:100%;
+} 
+body {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align:center;
+	background:black;
+	width:100%;
+	text-align:center;
+}
+div
+{
+	/*border:1px solid yellow;*/
+}
+ul, li 
+{
+	list-style-type: none;
+}
+
+
+.slides
+{     
+	position: relative;
+	width: 100%;
+}
+.slide-content
+{
+	position:relative;
+	width:85%;
+	max-width:720px;
+	left:0;
+	right:0;
+	margin:auto
+}
+.slide-text
+{
+	padding-bottom:140px;
+	padding-top:100px;
+}
