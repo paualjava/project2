@@ -1,0 +1,194 @@
+@font-face {
+	font-family: 'Conv_Mission Gothic Light';
+	src: url('font/Mission Gothic Light.eot');
+	src: local('☺'), url('font/Mission Gothic Light.woff') format('woff'), url('font/Mission Gothic Light.ttf') format('truetype'), url('font/Mission Gothic Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_Mission Gothic Bold';
+	src: url('font/Mission Gothic Bold.eot');
+	src: local('☺'), url('font/Mission Gothic Bold.woff') format('woff'), url('font/Mission Gothic Bold.ttf') format('truetype'), url('font/Mission Gothic Bold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_Mission Gothic Regular';
+	src: url('font/mission_gothic_regular.eot');
+	src: local('☺'), url('font/mission_gothic_regular.woff') format('woff'), url('font/mission_gothic_regular.ttf') format('truetype'), url('font/mission_gothic_regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_Mission Gothic Thin';
+	src: url('font/Mission Gothic Thin.eot');
+	src: local('☺'), url('font/Mission Gothic Thin.woff') format('woff'), url('font/Mission Gothic Thin.ttf') format('truetype'), url('font/Mission Gothic Thin.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body 
+{
+	font-family:'Conv_Mission Gothic Light',Sans-Serif;
+	color:#000000;
+	font-size:100%;
+	text-align:center;
+}
+
+p
+{
+	font-size:100%;
+	line-height:125%;
+}
+
+h1
+{
+	font-size:188%;
+	text-transform:uppercase;
+	margin-bottom:.75em;
+}
+
+h2
+{
+	font-size:.75em;
+	line-height:1em;
+}
+
+h3
+{
+	font-family:'Conv_Mission Gothic Thin',Sans-Serif;
+	font-size:250%;
+	color:white;
+	margin-bottom:83px;
+}
+
+h4
+{
+	letter-spacing:5px;
+	font-family:'Conv_Mission Gothic Bold',Sans-Serif;
+	font-size:125%;
+	color:white;
+	text-transform:uppercase;
+	margin-bottom:10px;
+}
+
+h5
+{
+	font-size:125%;
+	color:#00a99d;
+}
+
+a
+{
+	text-decoration:none;
+	color:white;
+	font-size:100%;
+	line-height:1em;
+	margin-bottom:.5em;	
+}
+
+input, textarea
+{
+	font-size:125%;
+	color:#a9a9a9;
+	font-family:inherit;
+}
+
+
+.image-text
+{
+	color:white;
+}
+
+.shop-button-link
+{
+	text-transform:uppercase;
+	font-size:125%;
+	letter-spacing:5px;
+}
+
+.newsletter-blurb
+{
+	font-size:175%;
+	line-height:35px;
+}
+
+.contact-form-submit-text
+{
+	font-size:155%;
+	text-transform:uppercase;
+	color:#00a99d !important;
+}
+
+.cn-logo-oneline
+{
+	font-size:188%;
+}
+
+.about-title
+{
+	font-size:375%;
+	margin-bottom:0;
+	letter-spacing:0.035em;
+}
+.about-sub
+{
+	font-size:313%;
+	letter-spacing:0.05em;
+	margin-bottom:1em;
+	padding-bottom:1em;
+	border-bottom:5px solid white;
+}
+
+.body-opener
+{
+	text-align:justify;
+	font-size:163%;
+}
+
+.body-about
+{
+	text-align:justify;
+}
+
+.pull-quote
+{
+	color:#00a99d !important;
+	text-transform:auto !important;
+}
+
+.face-photo-wrapper h5
+{
+	margin-top:50px;
+	text-transform:uppercase;
+	font-size:188%;
+	margin-bottom:10px;
+}
+
+.face-role
+{
+	font-family:"Conv_Mission Gothic Regular";
+}
+
+h6
+{
+	text-transform:uppercase;
+	font-size:100%;
+}
+
+.face-desc
+{
+	margin-top:10px;
+	font-size:100%;
+	margin-bottom:10px;
+}
+
+.in-text-link
+{
+	color:#00a99d ;
+}
+

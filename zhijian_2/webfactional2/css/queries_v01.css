@@ -1,0 +1,123 @@
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (-o-min-device-pixel-ratio: 3/2),
+	only screen and (min--moz-device-pixel-ratio: 1.5),
+	only screen and (min-device-pixel-ratio: 1.5) {
+	.pinterest-logo
+	{
+	background:url(../images/pinterest_small_01@2x.png) center no-repeat;
+	background-size:13px 16px;
+	}
+	.instagram-logo
+	{
+	background:url(../images/instagram_small_01@2x.png) center no-repeat;
+	background-size:17px 16px;
+	}
+	.facebook-logo
+	{
+	background:url(../images/facebook_small_01@2x.png) center no-repeat;
+	background-size:8px 16px;
+	}
+	.twitter-logo
+	{
+	background:url(../images/twitter_small_01@2x.png) center no-repeat;
+	background-size:20px 16px;
+	}
+	#cn-logo
+	{
+	background:url(../images/colournation_01@2x.png) center no-repeat;
+	background-size:190px 187px;
+	}
+	#cn-ring
+	{
+	background:url(../images/colournation_ring_01@2x.png) center no-repeat;
+	background-size:190px 187px;
+	}
+	input.button
+	{
+	background:url(../images/email_signup_ok_01@2x.png) center no-repeat;
+	background-size:82px 50px;
+	}
+	input.button:active
+	{
+	background:url(../images/email_signup_ok_click_01@2x.png) center no-repeat;
+	background-size:82px 50px;
+	}
+}
+@media screen and (max-width:850px){
+	.nav-links-wrapper
+	{
+		text-align:center;
+		padding-top:25px;
+	}
+	.cn-logo-oneline
+	{
+		float:none;
+		margin-left:0;
+	}
+	.social-icons a:last-child
+	{
+		margin-right:0px;
+	}
+}
+@media screen and (max-width:525px){
+	.nav-links-wrapper a:last-child
+	{
+		margin-right:0;
+	}
+	.social-icons
+	{
+		border-left:0;
+	}
+	.social-icons a:first-child
+	{
+		margin-left:0;
+	}
+}
+@media screen and (max-width:786px){
+	.face-photo-wrapper li
+	{
+		float:none;
+		width:100%;
+	}
+}
+@media screen and (max-width:350px){
+	body
+	{
+	font-size:80%;/*16px*/
+	}
+	.face-photo
+	{
+		float:none;
+	}
+}
+@media screen and (max-width:650px){
+	.contact-form-left
+	{
+		width:95%;
+		float:none;
+	}
+	.contact-form-right
+	{
+		position:relative;
+		float:none;
+		width:95%;
+		margin-right:0;
+	}
+	.contact-form-submit
+	{
+		margin-left:0;
+	}
+}
+@media screen and (max-width:770px){
+	.faq-list li
+	{
+		width:95%;
+		float:none;
+	}
+	.faq-list li:nth-child(odd)
+	{
+		width:95%;
+		margin-right:0;
+	}
+}
