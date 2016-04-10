@@ -48,7 +48,6 @@ p
 h1
 {
 	font-size:188%;
-	text-transform:uppercase;
 	margin-bottom:.75em;
 }
 
@@ -72,7 +71,6 @@ h4
 	font-family:'Conv_Mission Gothic Bold',Sans-Serif;
 	font-size:125%;
 	color:white;
-	text-transform:uppercase;
 	margin-bottom:10px;
 }
 
@@ -106,7 +104,6 @@ input, textarea
 
 .shop-button-link
 {
-	text-transform:uppercase;
 	font-size:125%;
 	letter-spacing:5px;
 }
@@ -120,7 +117,6 @@ input, textarea
 .contact-form-submit-text
 {
 	font-size:155%;
-	text-transform:uppercase;
 	color:#00a99d !important;
 }
 
@@ -164,7 +160,6 @@ input, textarea
 .face-photo-wrapper h5
 {
 	margin-top:50px;
-	text-transform:uppercase;
 	font-size:188%;
 	margin-bottom:10px;
 }
@@ -176,7 +171,7 @@ input, textarea
 
 h6
 {
-	text-transform:uppercase;
+	
 	font-size:100%;
 }
 

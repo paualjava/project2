@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title>The Colour Nation</title>
+		<title>PYRAMID</title>
 		<meta name='viewport' content='width=device-width,initial-scale=1.0'>
 		<meta name='author' content='@w12studios'>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -16,20 +16,24 @@
 		<script src='js/jquery.localscroll-1.2.7-min.js'></script>
 		<script src='js/main_01.js'></script>
         <style type="text/css">
-		#team-slide{z-index:1000;position:relative; background:#666;padding-top:20px}
+        body {font-family: "微软雅黑";font-size: 12px;}
+		#team-slide{z-index:0;position:relative; background:#666;padding-top:20px}
+		.fixed-nav-wrapper{border-bottom:solid 5px #00a99d;}
+		/*.fixed-nav-wrapper{border-bottom:solid 5px #fabf27;}
+		#about{background-color:#fabf27;}*/
 		</style>
         
 	</head>
 	<body>
 		<div class='fixed-nav-wrapper'>
-			<a href="#home" class="cn-logo-oneline">The Colour Nation</a>
+			<a href="#home" class="cn-logo-oneline">PYRAMID</a>
 			<ul class="nav-links-wrapper">
 				<li class="text-links">
-					<a href='http://the-colour-nation.myshopify.com/' target="_blank" class='nav-link'>Shop</a>
-					<a href='#about' target="_self" class='nav-link'>About</a>
-					<a href='#newsletter' target="_self" class='nav-link'>Newsletter</a>
-					<a href='#contact' target="_self" class='nav-link'>Contact</a>
-					<a href='http://thecolournationblog.tumblr.com/' target="_blank">Blog</a>
+					<a href='#all' target="_blank" class='nav-link'>ALL</a>
+					<a href='#about' target="_self" class='nav-link'>PYRAMID</a>
+					<a href='#newsletter' target="_self" class='nav-link'>PLANNING</a>
+					<a href='#contact_us' target="_self" class='nav-link'>LAUNCH</a>
+					<a href='#event' target="_blank">EVENT</a>
 				</li>
 				<li class='social-icons'>
 					<a class='image-replace facebook-logo' href='https://www.facebook.com/TheColourNation' target='_blank'>Facebook</a>
@@ -41,25 +45,25 @@
 		</div>
 		<div class="fixed-background-image">
 			<div class='logo-overlay slide-text'>
-				<div class='logo-wrapper'>
-					<h1 class="cn-logo image-replace">The Colour Nation</h1>
+				<!--<div class='logo-wrapper'>
+					<h1 class="cn-logo image-replace">PYRAMID</h1>
 					<h1 class="cn-ring image-replace"></h1>
 				</div>
-				<a href='http://the-colour-nation.myshopify.com/' class='image-text shop-button-link shop-button-link-top' target="_blank">Shop</a>
+				<a href='http://the-colour-nation.myshopify.com/' class='image-text shop-button-link shop-button-link-top' target="_blank">Shop</a>-->
 			</div>
 		</div>
 		<div id='home' class='slides'>
 		</div>
         <div id='about' class='slides'>
 			<div class='absolute-nav-wrapper'>
-					<a href="#home" class="cn-logo-oneline">The Colour Nation</a>
+					<a href="#home" class="cn-logo-oneline">PYRAMID</a>
 					<ul class="nav-links-wrapper">
 							<li class="text-links">
-								<a href='http://the-colour-nation.myshopify.com/' target="_blank" class='nav-link'>Shop</a>
-								<a href='#about' target="_self" class='nav-link'>About</a>
-								<a href='#newsletter' target="_self" class='nav-link'>Newsletter</a>
-								<a href='#contact' target="_self" class='nav-link'>Contact</a>
-								<a href='http://thecolournationblog.tumblr.com/' target="_blank">Blog</a>
+								<a href='#all' target="_self" class='nav-link'>ALL</a>
+								<a href='#about' target="_self" class='nav-link'>PYRAMID</a>
+								<a href='#newsletter' target="_self" class='nav-link'>PLANNING</a>
+								<a href='#contact' target="_self" class='nav-link'>LAUNCH</a>
+								<a href='#event' target="_blank">EVENT</a>
 							</li>
 							<li class='social-icons'>
 								<a class='image-replace facebook-logo' href='https://www.facebook.com/TheColourNation' target='_blank'>Facebook</a>
@@ -74,7 +78,7 @@
 	
 		
 	<div id="team-slide">
-	<div class="serviceWrap">
+	<div class="serviceWrap" id="all">
 	<div class="service">
 		<h1 class="topTitle">Service</h1>
 		<div class="serList">
@@ -108,7 +112,7 @@
 			<div class="serList-01">
 				<div class="serList-01T">
 					<span class="fl"><img src="images2/se-tu4.jpg"></span>
-					<p class="fl">Marketint</p>
+					<p class="fl">Marketin</p>
 				</div>
 				<div class="serList-01B">
 					Lorem ipsum dolor sit amet,consectetur adipiscing elit.Maecenas ultricies urna et nisl pharetra,eu bibendum magna quis.consequat.
@@ -117,7 +121,7 @@
 		</div>
 	</div>
 </div>
-<div class="aboutWrap">
+<div class="aboutWrap" id="about">
 	<div class="about">
 		<h1 class="topTitle">About us</h1>
 		<p>
@@ -126,7 +130,7 @@
 		</p>
 	</div>
 </div>
-<div class="fullWrap">
+<div class="fullWrap" id="newsletter">
 	<div class="full">
 		<h1 class="topTitle">Full service team</h1>
 		<div class="fullC">
@@ -148,7 +152,7 @@
 		</div>
 	</div>
 </div>
-<div class="yyWrap">
+<div class="yyWrap" id="event">
 	<div class="yy">
 		<div class="yyT">
 			<ul>
@@ -182,43 +186,43 @@
 		</div>
 	</div>
 </div>
-<div class="linkWrap">
+<div class="linkWrap" id="contact_us">
 	<div class="link">
 		<div class="linkT">
 			<ul>
-				<li><a href="#">
+				<li><a href="javascript:void(0)">
 					<span><img src="images2/link-tu1.jpg"></span>
 					<h3>上海</h3>
 					<p>自营工厂</p>
 				</a></li>
-				<li><a href="#">
+				<li><a href="javascript:void(0)">
 					<span><img src="images2/link-tu2.jpg"></span>
-					<h3>上海</h3>
-					<p>自营工厂</p>
+					<h3>4000</h3>
+					<p>Of Area</p>
 				</a></li>
-				<li><a href="#">
+				<li><a href="javascript:void(0)">
 					<span><img src="images2/link-tu3.jpg"></span>
-					<h3>上海</h3>
-					<p>自营工厂</p>
+					<h3>70cm</h3>
+					<p>Highest</p>
 				</a></li>
-				<li><a href="#">
+				<li><a href="javascript:void(0)">
 					<span><img src="images2/link-tu4.jpg"></span>
-					<h3>上海</h3>
-					<p>自营工厂</p>
+					<h3>40</h3>
+					<p>Worker</p>
 				</a></li>
-				<li><a href="#">
+				<li><a href="javascript:void(0)">
 					<span><img src="images2/link-tu5.jpg"></span>
-					<h3>上海</h3>
-					<p>自营工厂</p>
+					<h3>800</h3>
+					<p>Production</p>
 				</a></li>
 			</ul>
 		</div>
 		<div class="linkB">
 			<ul>
-				<li><a href="#">上海</a></li>
-				<li><a href="#">北京</a></li>
-				<li><a href="#">广州</a></li>
-				<li><a href="#">成都</a></li>
+				<li><a href="javascript:void(0)">上海</a></li>
+				<li><a href="javascript:void(0)">北京</a></li>
+				<li><a href="javascript:void(0)">广州</a></li>
+				<li><a href="javascript:void(0)">成都</a></li>
 			</ul>
 		</div>
 	</div>
@@ -228,25 +232,71 @@
 		<div class="footL fl"><img src="images2/ditu.jpg"></div>
 		<div class="footM fl">
 			<div class="footT">
-				<span class="fl">公司地址：</span>
-				<p class="fl">上海市上海市上海市上海市上海市上海市上海市上海市上海市上海市上海市</p>
+				<span class="fl">公司地址 ：上海市静安区常德路(德安大厦)814号403-404室</span>
 			</div>
-			<p>电话:021-31197428/29/30&nbsp;&nbsp;传真:021-31197428-802</p>
-			<p>联系人：王涛（先生）&nbsp;&nbsp;&nbsp;&nbsp;联系电话：136-8182-2987</p>
+			<p>电话 ：021-31197428 / 29 / 30&nbsp;&nbsp;传真 ：021-31197428 - 802</p>
+			<p>联系人 ：王涛（先生）&nbsp;&nbsp;&nbsp;&nbsp;联系电话 ：136-8182-2987</p>
 		</div>
 		<div class="footM fl">
 			<div class="footT">
-				<span class="fl">Add:</span>
-				<p class="fl">上海市上海市上海市上海市上海市上海市上海市上海市上海市上海市上海市</p>
+				<span class="fl">Add ：Room 403-404,Block A,NO.814,Changde <br/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Road,Jing'an district,Shanghai</span>
 			</div>
-			<p>电话:021-31197428/29/30&nbsp;&nbsp;传真:021-31197428-802</p>
-			<p>联系人：王涛（先生）&nbsp;&nbsp;&nbsp;&nbsp;联系电话：136-8182-2987</p>
+			<p>Tel ：021-31197428 / 29 / 30&nbsp;&nbsp;Fax ：021-31197428 - 802</p>
+			<p>Contact ：Wang Tao（Sir）&nbsp;&nbsp;&nbsp;&nbsp;Phone ：136-8182-2987</p>
 		</div>
 	</div>
 </div>
 <div class="footerWrap">
-	<div class="footerCon">Copyright 2001-2010 | 沪ICP证080482</div>
+	<div class="footerCon">Copyright 2001-2016 | 沪ICP证080482号</div>
 </div>
 </div>
+<script type="text/javascript">
+$(function ()
+{
+	$(".serList-01T").each(function ()
+	{
+		$(this).hover(function ()
+		{
+			$(this).css({'color':"#ef7b28",'cursor':'default'});
+		},function ()
+		{
+			$(this).css({'color':"#353432",'cursor':'default'});
+		})
+	})
+	$(".linkB ul li").each(function ()
+	{
+		$(this).hover(function ()
+		{
+			index=$(".linkB ul li").index(this);
+			add_name="上海";
+			add_name=(index==1) ? "北京" : add_name;
+			add_name=(index==2) ? "广州" : add_name;
+			add_name=(index==3) ? "成都" : add_name;
+			distance="70cm";
+			distance=(index==1) ? "120km" : distance;
+			distance=(index==2) ? "400km" : distance;
+			distance=(index==3) ? "900km" : distance;
+			$(".link .linkT li").eq(0).find("h3").html(add_name);
+			$(".link .linkT li").eq(3).find("h3").html(distance);
+			$(this).find("a").css({'color':"#ef7b28",'cursor':'default'});
+		},function ()
+		{
+			$(this).find("a").css({'color':"#fff",'cursor':'default'});
+		})
+	})
+	$(".yy-moreR.fr").each(function ()
+	{
+		$(this).hover(function ()
+		{
+			$(this).css({'color':"#ef7b28",'cursor':'default'});
+		},function ()
+		{
+			$(this).css({'color':"#fff",'cursor':'default'});
+		})
+	})
+	
+	
+})
+</script>
 	</body>
 </html>

@@ -104,6 +104,7 @@ a {
 	margin: 0 auto;
 	padding-top: 55px;
 	overflow: hidden;
+	text-align: left;
 }
 .serList{
 	width: 900px;
@@ -132,6 +133,8 @@ a {
 	font-size: 34px;
 	line-height: 60px;
 	font-weight: normal;
+	text-align: left;
+
 }
 .aboutWrap{
 	width: 1200px;
@@ -145,6 +148,7 @@ a {
 	margin: 0 auto;
 	padding-top: 55px;
 	color: #5d372c;
+	text-align: left;
 }
 .about p{
 	width: 570px;
@@ -177,8 +181,11 @@ a {
 	float: left;
 	width: 146px;
 	margin-right: 10px;
-	line-height: 50px;
+	line-height: 20px;
 	font-size: 16px;
+	text-align: left;
+	margin-top:3px;
+	margin-bottom:25px;
 }
 .yyWrap{
 	width: 1200px;
@@ -192,6 +199,7 @@ a {
 	margin: 0 auto;
 	padding-top: 55px;
 	color: #fff;
+	text-align: left;
 }
 .yyT ul{
 	width: 860px;
@@ -276,6 +284,7 @@ a {
 	font-size: 18px;
 	color: #fff;
 	font-weight: normal;
+	margin:4px 0 4px 0
 }
 .linkT ul li p{
 	color: #fff;
@@ -308,26 +317,29 @@ a {
 	margin: 0 auto;
 	background: #363533;
 	overflow: hidden;
+	text-align: left;
 }
 .foot{
-	width: 850px;
+	width: 900px;
 	margin: 0 auto;
 	padding-top: 35px;
 	color: #fff;
 }
 .footL{
-	margin: 0 50px 20px 0;
+	margin: 0 30px 20px 0;
 }
 .footM{
-	width: 305px;
-	margin-right: 25px;
+	width: 325px;
+	margin-right: 45px;
 }
 .foot p{
 	line-height: 30px;
 }
 .footT{
 	overflow: hidden;
-	margin-bottom: 15px;
+	margin-bottom: 5px;
+	height:45px;
+	line-height: 22px;
 }
 .footT p{
 	width: 226px;
@@ -350,3 +362,5 @@ a {
 	line-height: 70px;
 	margin: 0 auto;
 }
+.nav-links-wrapper a:hover{color:#ef7b28;font-weight: bold;}
+
