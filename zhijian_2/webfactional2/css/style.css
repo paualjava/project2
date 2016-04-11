@@ -4,7 +4,9 @@ body {
 	font-family: "微软雅黑";
 	font-size: 12px;
 	color: #353432;
-	background: #282828;
+	/*background: #f9b71e;*/
+	background: #363533;
+	
 }
 ul,
 li,
@@ -81,19 +83,22 @@ a {
 	width: 850px;
 	margin: 0 auto;
 	color: #fff;
-	padding-top: 80px;
+	padding-top: 40px;
 }
 .banner h1{
-	font-size: 34px;
+	font-size: 39px;
 	font-weight: normal;
-	line-height: 70px;
+	line-height: 40px;
+	margin-bottom:10px;
 }
 .banText{
 	font-size: 18px;
 	margin-bottom: 10px;
+	line-height:28px;
+	margin-top:5px;
 }
 .serviceWrap{
-	width: 1200px;
+	width: 100%;
 	height: 338px;
 	margin: 0 auto;
 	background: #fff;
@@ -137,7 +142,7 @@ a {
 
 }
 .aboutWrap{
-	width: 1200px;
+	width: 100%;
 	height: 320px;
 	margin: 0 auto;
 	background: #ef7b28;
@@ -147,7 +152,6 @@ a {
 	width: 850px;
 	margin: 0 auto;
 	padding-top: 55px;
-	color: #5d372c;
 	text-align: left;
 }
 .about p{
@@ -155,7 +159,8 @@ a {
 	font-size: 18px;
 }
 .fullWrap{
-	width: 1200px;
+	width: 100%;
+	padding:10px 0 30px 0;
 	height: 435px;
 	margin: 0 auto;
 	background: #fff;
@@ -188,7 +193,8 @@ a {
 	margin-bottom:25px;
 }
 .yyWrap{
-	width: 1200px;
+	width: 100%;
+	padding:20px 0 20px 0;
 	height: 526px;
 	margin: 0 auto;
 	background: #f8b51c;
@@ -250,9 +256,10 @@ a {
 	margin-top: 10px;
 }
 .linkWrap{
-	width: 1200px;
+	width: 100%;
 	height: 340px;
 	margin: 0 auto;
+	padding:30px 0 30px 0;
 	background: #959595;
 	overflow: hidden;
 }
@@ -312,9 +319,11 @@ a {
 	font-size: 18px;
 }
 .footWrap{
-	width: 1200px;
+	/*width: 1200px;*/
+	width: 100%;
 	height:186px;
 	margin: 0 auto;
+	padding: 40px 0 50px 0;
 	background: #363533;
 	overflow: hidden;
 	text-align: left;
@@ -349,7 +358,8 @@ a {
 	width: 270px;
 }
 .footerWrap{
-	width: 1200px;
+	/*width: 1200px;*/
+	width: 100%;
 	height:70px;
 	margin: 0 auto;
 	background: #252928;
@@ -362,5 +372,31 @@ a {
 	line-height: 70px;
 	margin: 0 auto;
 }
-.nav-links-wrapper a:hover{color:#ef7b28;font-weight: bold;}
+.nav-links-wrapper a:hover{color:#ef7b28;}
 
+.facebook-logo2
+{
+	width:13px;
+	height:24px;
+	background:url(../images/facebook_01.png) right center no-repeat;
+}
+.instagram-logo2
+{
+	width:26px;
+	height:24px;
+	background:url(../images/instagram_01.png) center no-repeat;
+}
+.pinterest-logo2
+{
+	width:20px;
+	height:24px;
+	background:url(../images/pinterest_01.png) center no-repeat;
+}
+
+.twitter-logo2 {
+    width: 31px;
+    height: 24px;
+    background: url(../images/twitter_01.png) center no-repeat;
+}
+
+.nav-links-wrapper a{color:#363533}

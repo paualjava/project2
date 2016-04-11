@@ -10,7 +10,7 @@
 		<link href='css/textstyling_v02.css' type='text/css' rel='stylesheet'/>
 		<link href='css/main_v01.css' type='text/css' rel='stylesheet'/>
 		<link href='css/queries_v01.css' type='text/css' rel='stylesheet'/>
-        <link href='css/style.css' type='text/css' rel='stylesheet'/>
+        <link href='css/style.css?2' type='text/css' rel='stylesheet'/>
 		<script src='js/jquery-1.9.1.min.js'></script>
 		<script src='js/jquery.scrollTo-1.4.3.1-min.js'></script>
 		<script src='js/jquery.localscroll-1.2.7-min.js'></script>
@@ -26,7 +26,7 @@
 	</head>
 	<body>
 		<div class='fixed-nav-wrapper'>
-			<a href="#home" class="cn-logo-oneline">PYRAMID</a>
+			<a href="#home" class="cn-logo-oneline"><img src="images2/logo.png"/></a>
 			<ul class="nav-links-wrapper">
 				<li class="text-links">
 					<a href='#all' target="_blank" class='nav-link'>ALL</a>
@@ -45,6 +45,25 @@
 		</div>
 		<div class="fixed-background-image">
 			<div class='logo-overlay slide-text'>
+            <div class="banner" style="text-align:left">
+		<h1>为您的品牌注入生命是我们的使命!</h1>
+        <p><img src="images2/banner-tu.png"></p>
+		<div class="banText">
+			没有生命力的品牌无法拥有自身散发的魅力<br />
+			无法感染于他人<br />
+			如同机器的声音，没有活动、没有生动<br />
+			富有生命力的品牌有独自的STYLE<br />
+			他的举动都会引起共鸣
+		</div>
+        <li class='social-icons' style="border-left:none">
+								<a class='image-replace facebook-logo2' href='https://www.facebook.com/TheColourNation' target='_blank' style="margin-left:0">Facebook</a>
+								<a class='image-replace twitter-logo2' href='https://twitter.com/thecolournation' target='_blank'>Twitter</a>
+								<a class='image-replace instagram-logo2' href='http://instagram.com/thecolournation' target='_blank'>Instagram</a>
+								<a class='image-replace pinterest-logo2' href='http://www.pinterest.com/tcnpins/' target='_blank'>Pinterest</a>
+							</li>
+		
+	</div>
+
 				<!--<div class='logo-wrapper'>
 					<h1 class="cn-logo image-replace">PYRAMID</h1>
 					<h1 class="cn-ring image-replace"></h1>
@@ -56,7 +75,7 @@
 		</div>
         <div id='about' class='slides'>
 			<div class='absolute-nav-wrapper'>
-					<a href="#home" class="cn-logo-oneline">PYRAMID</a>
+					<a href="#home" class="cn-logo-oneline"><img src="images2/logo.png"/></a>
 					<ul class="nav-links-wrapper">
 							<li class="text-links">
 								<a href='#all' target="_self" class='nav-link'>ALL</a>
@@ -75,7 +94,24 @@
 				</div>
 			
 		</div>
-	
+<div class="aboutWrap" id="about">
+	<div class="about">
+		<h1 class="topTitle">About us</h1>
+		<p>
+			金字塔活动营销公司提供专业一流的设计搭建、活动策划及活动运营。我们拥有优秀高效的服务团队，团队成员均在国内外有多年品牌服务活动经验。<br />
+			我们专注于出色的设计，满足客户的不同需求。不断运用最新的设计理念，配合独具匠心的策划方案，呈现最佳的活动效果。
+		</p>
+        <hr/>
+        <p>
+			Pyramid Event Marketing Ltd provides professional， first class design，construction，<br />
+            event planning and event operation。We have effective service team，all the members have<br />
+             years of experience of brand service in or out of the country。 <br />
+We focus on excellent design and meet the needs of different requirement。<br />
+With the lastest design idea and unique style of program planning，and we provide the best result
+		</p>
+        
+	</div>
+</div>	
 		
 	<div id="team-slide">
 	<div class="serviceWrap" id="all">
@@ -121,15 +157,7 @@
 		</div>
 	</div>
 </div>
-<div class="aboutWrap" id="about">
-	<div class="about">
-		<h1 class="topTitle">About us</h1>
-		<p>
-			金字塔活动营销公司提供专业一流的设计搭建、活动策划及活动运营。我们拥有优秀高效的服务团队，团队成员均在国内外有多年品牌服务活动经验。<br />
-			我们专注于出色的设计，满足客户的不同需求。不断运用最新的设计理念，配合独具匠心的策划方案，呈现最佳的活动效果。
-		</p>
-	</div>
-</div>
+
 <div class="fullWrap" id="newsletter">
 	<div class="full">
 		<h1 class="topTitle">Full service team</h1>
@@ -267,6 +295,7 @@ $(function ()
 	{
 		$(this).hover(function ()
 		{
+			$(".linkB ul li a").css({'color':"#fff",'cursor':'default'});
 			index=$(".linkB ul li").index(this);
 			add_name="上海";
 			add_name=(index==1) ? "北京" : add_name;
@@ -281,7 +310,7 @@ $(function ()
 			$(this).find("a").css({'color':"#ef7b28",'cursor':'default'});
 		},function ()
 		{
-			$(this).find("a").css({'color':"#fff",'cursor':'default'});
+			
 		})
 	})
 	$(".yy-moreR.fr").each(function ()
