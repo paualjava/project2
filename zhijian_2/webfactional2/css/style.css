@@ -84,6 +84,7 @@ a {
 	margin: 0 auto;
 	color: #fff;
 	padding-top: 40px;
+	opacity: 1;
 }
 .banner h1{
 	font-size: 39px;
@@ -139,7 +140,7 @@ a {
 	line-height: 60px;
 	font-weight: normal;
 	text-align: left;
-
+	color:#5d372c;
 }
 .aboutWrap{
 	width: 100%;
@@ -155,7 +156,8 @@ a {
 	text-align: left;
 }
 .about p{
-	width: 570px;
+	line-height:26px;
+	color:#5d372c;
 	font-size: 18px;
 }
 .fullWrap{
@@ -224,7 +226,7 @@ a {
 .yy-moreL{
 	width: 669px;
 	height: 38px;
-	background: #997032;
+	background: #f8b51c;
 	margin-right: 3px;
 	font-size: 16px;
 	padding-left: 10px;
@@ -400,3 +402,4 @@ a {
 }
 
 .nav-links-wrapper a{color:#363533}
+#about hr{border:none;border-top:solid 3px #5d372c;}
