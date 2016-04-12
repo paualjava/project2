@@ -330,6 +330,8 @@ $(function ()
 			$(".link .linkT li").eq(2).find("h3").html(distance);
 			$(".link .linkT li").eq(3).find("h3").html(worker);
 			$(".link .linkT li").eq(4).find("h3").html(production);
+			chang=(index==0) ? "自营工厂" : "合作工厂";
+			$(".link .linkT li").eq(0).find("p").html(chang);
 			$(this).find("a").css({'color':"#ef7b28"});
 		})
 	})
