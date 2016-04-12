@@ -1,0 +1,512 @@
+
+<html >
+<head>
+<meta name="keywords" content="HTML,DHTML,CSS,JavaScript" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi, width=640px, user-scalable=no" />
+<!-- 	<meta http-equiv="pragma" content="no-cache"> -->
+<!-- 	<meta http-equiv="cache-control" content="no-cache"> -->
+<!-- 	<meta http-equiv="expires" content="0"> -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="handid" content="123456"/>
+	<meta name="titleString" content="第3手"/>
+	<meta name="shareUrl" content="http://replay.pokermate.net:8080/handplayer/replay/?url=de6eb0a0ba32c4a9772227b99713b14774d7d8690293a750cbfddf2c735e5beb920ca655f17f844af94851f98ba740b5"/>
+	<meta name="cardl" content="23"/>
+	<meta name="cardr" content="0"/>
+	<title>牌谱播放</title>
+	<link rel="shortcut icon"
+		href="images/new_icon_16.png">
+	<link rel="apple-touch-icon-precomposed" sizes="16x16"
+		href="images/new_icon_16.png">
+	<script src="js/iioEngine.js"></script>
+	<script src="js/PokerPlayback.js"></script>
+	<script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<style type="text/css">
+	      .ui-loader-default{ display:none}
+      .ui-mobile-viewport{ border:none;}
+      .ui-page {padding: 0; margin: 0; outline: 0}
+		button {
+			outline: none;
+		}
+		button.replay {
+			width: 66px;
+			height: 66px;
+			border-style: none;
+			display: none;
+			background: url(images/replay.png);
+		}
+		button.replay:active {
+			background: url(images/replay_pressed.png);
+		}
+		button.pause {
+			width: 66px;
+			height: 66px;
+			border-style: none;
+			background: url(images/pause.png);
+		}
+		button.pause:active {
+			background: url(images/pause_pressed.png);
+		}
+		button.play {
+			width: 66px;
+			height: 66px;
+			border-style: none;
+			background: url(images/play.png);
+			display: none;
+		}
+		button.play:active {
+			background: url(images/play_pressed.png);
+		}
+		button.forward {
+			width: 50px;
+			height: 50px;
+			border-style: none;
+			background: url(images/play_forward.png)
+		}
+		button.forward:active {
+			background: url(images/play_forward_pressed.png)
+		}
+		button.back {
+			width: 50px;
+			height: 50px;
+			border-style: none;
+			background: url(images/play_back.png);
+		}
+		button.back:active {
+			background: url(images/play_back_pressed.png)
+		}
+	</style>
+<script type="text/javascript">
+	var loaded = false;
+	$(document).ready(function(){
+		if(!loaded){
+			$('.recomm').each(function(){
+				$(this).bind({
+				'vmousedown' : function(){
+					$(this).css("background-color","#e4e4e4");
+					document.getElementById("card_"+$(this).attr('title')).src="images/card_pressed.png";
+				},
+				'vmouseout' : function(){
+					$(this).css("background-color","#f6f5f5");
+					document.getElementById("card_"+$(this).attr('title')).src="images/card.png";
+				},
+				'vmousecancel' : function(){
+					$(this).css("background-color","#f6f5f5");
+					document.getElementById("card_"+$(this).attr('title')).src="images/card.png";
+				},
+			    'vmouseup' : function(){
+			    	$(this).css("background-color","#f6f5f5");
+					document.getElementById("card_"+$(this).attr('title')).src="images/card.png";
+			    }
+			})
+			}
+			);
+			$('#icon_replay').click(function(){
+					recordHelper.replay();
+					$('#icon_replay').hide();
+					$('#icon_play').hide();
+					$('#icon_pause').show();
+			});
+			$('#icon_pause').click(function(){
+				recordHelper.pause();
+				$('#icon_pause').hide();
+				$('#icon_play').show();
+				playing = false;
+			});
+			$('#icon_play').click(function(){
+				recordHelper.pause();
+				$('#icon_pause').show();
+				$('#icon_play').hide();
+				playing = true;
+			});
+			$('#btnPlayForward').click(function(){
+				recordHelper.forward();
+			});
+			$('#btnPlayBack').click(function(){
+				recordHelper.backward();
+			});
+		}
+		loaded=true;
+		});
+	</script>
+</head>
+<body style="background-color: rgb(101, 101, 101); margin: 0; text-align: center">
+<div style='margin:0 auto;display:none;'>
+<img src='images/icon_wx_new.png' />
+</div>
+<div style="margin: 0px auto; width: 640px; background-color: white;overflow: auto;position: relative;" >
+	<!-- 画布 -->
+	<div style="width: 640px; height: 514px">
+		<canvas id="pokerPanl" width="640px" height="514px"></canvas>
+		<div
+			style="width: 640px; height: 66px; position: relative; margin-top: -77px;">
+			<div style="width: 66px; height: 66px; float: left;margin-left: 34px;">
+				<button id="icon_pause" class="pause"></button>
+				<button id="icon_play" class="play"></button>
+				<button id="icon_replay" class="replay"></button>
+			</div>
+			<div style="width:150px;height:63px;background: url(images/next_bg.png);float: right;margin-right:20px;margin-top: 2px;">
+				<div style="float: left; margin-top:6px;margin-left:6px;">
+						<button id="btnPlayBack" class="back"></button>
+				</div>
+				<div style="float:left;margin-top: 6px;margin-left: 38px;">
+						<button id="btnPlayForward" class="forward"></button>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	</div>
+	<!--     进度条 -->
+	<div style="width: 640px; height: 6px; clear: both">
+		<div style="width: 640px; height: 6px; background-color: #666464;">
+			<div id="progressBar"
+				style="width: 50%; height: 6px; background-color: #fedf9e;"></div>
+		</div>
+	</div>
+	<!-- 信息部分 -->
+    <div id="info_div" style="width:100%;text-align: center;clear: both;overflow: auto;">
+    	<!-- 标题 -->
+     	<div style="height: 32px;">
+			<div
+				style="height: 32px; text-align: left; font-size: 32px; color: black; font-family: 'SimHei'; margin-left: 40px;margin-top:30px">
+				<div style="float: left;margin-right: 20px;">第3手</div>
+				<div style="float: left;">午夜两小时</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+		<div
+			style="height: 20px; color: #c7c7c7; line-height: 20px; font-size: 20px; font-family: 'SimHei';margin-top:42px;margin-left: 40px;">
+			<div style="width:171px;float:left;">
+				<img src="images/info_chip.png" style="float:left;">
+				<div style="height: 20px; color: #c7c7c7; line-height: 20px; font-size: 20px; font-family: 'SimHei';float:left;">
+				5/10
+				</div>
+			</div>
+			<div style="width:171px;float:left">
+				<img src="images/info_clock.png" style="float:left;">
+				<div style="height: 20px; color: #c7c7c7; line-height: 20px; font-size: 20px; font-family: 'SimHei';float:left;">
+				04-07 23:59
+				</div>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+		<div id="history_discription"
+			style="margin-top: 36px; margin-left: 40px; margin-right: 40px; color: #c7c7c7; text-align: justify; font-size: 24px; font-family: 'SimHei';">
+		</div>
+		<!-- 牌谱浏览信息 -->
+		<div
+			style="margin-top: 30px; margin-right: 40px; margin-left: 40px; height: 44px; text-align: left;">
+			<img src="images/13247_small_1433142212172.png" onerror="images/icon.png" width="40px"
+				style="float: left; margin-top: 1px;" />
+			<div
+				style="margin-left: 26px; float: left; font-size: 24px; line-height: 44px; color: #605d5d; font-family: 'SimHei';">
+				阿冰
+			</div>
+			<div style="width: 100px; margin-right: 0px; float: right;">
+				<div style="width: 44px; float: left">
+					<img id="btn_like" src="images/zan.png" onclick="like()" />
+				</div>
+				<div id="like_num"
+					style="width: 56px; float: left; line-height: 44px; font-size: 24px; color: #c6c6c5; text-align: leftfont-family:'SimHei';">
+	    				1
+	    		</div>
+			</div>
+			<div style="width: 100px; margin-right: 24px; float: right;">
+				<div style="width: 44px; float: left">
+					<img src="images/eye.png"/>
+				</div>
+				<div id="scan_num"
+					style="width: 56px; float: left; line-height: 44px; font-size: 24px; color: #c6c6c5; text-align: leftfont-family:'SimHei';">
+	    				23
+	    		</div>
+			</div>
+		</div>
+		<div
+			style="height: 1px; background-color: #d0d0d0; margin-top: 11px; clear: both">
+		</div>
+		<div style="margin: 20px 30px 0px;width:580px; height: 263px; clear: both;">
+			<div
+				style="color: #525252; font-family: 'SimHei'; font-size: 24px; text-align: left">
+				精彩牌谱推荐
+			</div>
+			<!-- 推荐牌谱列表 -->
+			<div style="width: 592px; margin-left:-12px;margin-top:18px;">
+					<div class="recomm" title="0"
+					onclick="window.location.href='http://replay.pokermate.net:8080/handplayer/replay/?url=de6eb0a0ba32c4a90d85f80d241586f4f3a52ca3f6b868d354e44afd0223cb72f242879a16d5f5f8ee442bbd18f244bf'"
+				 		style=" float: left; width: 284px; height: 102px;background-color: #f6f5f5; border-radius: 8px;border-width: 0px; margin-top:12px;margin-left:12px;">
+							<div style="float: left; position: relative;margin-left: 15px; width: 75px;height: 71px;margin-top: 15px;">
+									<div style="position: absolute;left:8px;top: 8px; font-size: 20px;color: white;">
+										<strong>K</strong>
+									</div>
+									<div style="position: absolute;left:37px;top: 1px; font-size: 20px;color: white;">
+										<strong>K</strong>
+									</div>
+									<div style="position:absolute;left:4px;top: 30px;">
+										<img src="images/s.png" />
+									</div>
+									<div style="position:absolute;left:33px;top: 23px;">
+										<img src="images/h.png" />
+									</div>
+									<img id="card_0" src="images/card.png">
+							</div>
+							<div style="float: left; margin-left: 14px; position: relative;font-size: 20px;color: #696a6c;width: 161px;height: 71px;margin-top: 15px;">
+								<div style="width: 161px;height:54px;text-align: left;word-wrap:break-word; word-break:break-all;display:block;">
+									第121手
+								</div>
+								<div style="position: absolute; top: 56px; width: 30px; height: 40;">
+									<div style="position: absolute;float: left;">
+										<img src="images/eye_small.png" />
+									</div>
+									<div style="position: absolute;left:30px;float: left;font-size: 20px;color:#5c5c5b">
+										99
+									</div>
+								</div>
+							</div>
+					</div>
+					<div class="recomm" title="1"
+					onclick="window.location.href='http://replay.pokermate.net:8080/handplayer/replay/?url=de6eb0a0ba32c4a9637dbaf41e4e43755a002fc01349ea3ae60f2e93efb36b7a9234a3e97f31a20c3ce0e7e07e45f4c5'"
+				 		style=" float: left; width: 284px; height: 102px;background-color: #f6f5f5; border-radius: 8px;border-width: 0px; margin-top:12px;margin-left:12px;">
+							<div style="float: left; position: relative;margin-left: 15px; width: 75px;height: 71px;margin-top: 15px;">
+									<div style="position: absolute;left:8px;top: 8px; font-size: 20px;color: white;">
+										<strong></strong>
+									</div>
+									<div style="position: absolute;left:37px;top: 1px; font-size: 20px;color: white;">
+										<strong></strong>
+									</div>
+									<div style="position:absolute;left:4px;top: 30px;">
+										<img src="images/.png" />
+									</div>
+									<div style="position:absolute;left:33px;top: 23px;">
+										<img src="images/.png" />
+									</div>
+									<img id="card_1" src="images/card.png">
+							</div>
+							<div style="float: left; margin-left: 14px; position: relative;font-size: 20px;color: #696a6c;width: 161px;height: 71px;margin-top: 15px;">
+								<div style="width: 161px;height:54px;text-align: left;word-wrap:break-word; word-break:break-all;display:block;">
+									第57手
+								</div>
+								<div style="position: absolute; top: 56px; width: 30px; height: 40;">
+									<div style="position: absolute;float: left;">
+										<img src="images/eye_small.png" />
+									</div>
+									<div style="position: absolute;left:30px;float: left;font-size: 20px;color:#5c5c5b">
+										89
+									</div>
+								</div>
+							</div>
+					</div>
+					<div class="recomm" title="2"
+					onclick="window.location.href='http://replay.pokermate.net:8080/handplayer/replay/?url=de6eb0a0ba32c4a99c1d83e8d42492bed94b3481bd66038008d30eb1a44e3821cfe9468fe2bcb11e5488b1c3acd6ef4f'"
+				 		style=" float: left; width: 284px; height: 102px;background-color: #f6f5f5; border-radius: 8px;border-width: 0px; margin-top:12px;margin-left:12px;">
+							<div style="float: left; position: relative;margin-left: 15px; width: 75px;height: 71px;margin-top: 15px;">
+									<div style="position: absolute;left:8px;top: 8px; font-size: 20px;color: white;">
+										<strong></strong>
+									</div>
+									<div style="position: absolute;left:37px;top: 1px; font-size: 20px;color: white;">
+										<strong></strong>
+									</div>
+									<div style="position:absolute;left:4px;top: 30px;">
+										<img src="images/.png" />
+									</div>
+									<div style="position:absolute;left:33px;top: 23px;">
+										<img src="images/.png" />
+									</div>
+									<img id="card_2" src="images/card.png">
+							</div>
+							<div style="float: left; margin-left: 14px; position: relative;font-size: 20px;color: #696a6c;width: 161px;height: 71px;margin-top: 15px;">
+								<div style="width: 161px;height:54px;text-align: left;word-wrap:break-word; word-break:break-all;display:block;">
+									第192手
+								</div>
+								<div style="position: absolute; top: 56px; width: 30px; height: 40;">
+									<div style="position: absolute;float: left;">
+										<img src="images/eye_small.png" />
+									</div>
+									<div style="position: absolute;left:30px;float: left;font-size: 20px;color:#5c5c5b">
+										89
+									</div>
+								</div>
+							</div>
+					</div>
+					<div class="recomm" title="3"
+					onclick="window.location.href='http://replay.pokermate.net:8080/handplayer/replay/?url=de6eb0a0ba32c4a9747736843d7069c65e4696b809efa15a938a3daeb9f9920e78ee96bc2ee977dd560675243755ac92'"
+				 		style=" float: left; width: 284px; height: 102px;background-color: #f6f5f5; border-radius: 8px;border-width: 0px; margin-top:12px;margin-left:12px;">
+							<div style="float: left; position: relative;margin-left: 15px; width: 75px;height: 71px;margin-top: 15px;">
+									<div style="position: absolute;left:8px;top: 8px; font-size: 20px;color: white;">
+										<strong>10</strong>
+									</div>
+									<div style="position: absolute;left:37px;top: 1px; font-size: 20px;color: white;">
+										<strong>Q</strong>
+									</div>
+									<div style="position:absolute;left:4px;top: 30px;">
+										<img src="images/h.png" />
+									</div>
+									<div style="position:absolute;left:33px;top: 23px;">
+										<img src="images/h.png" />
+									</div>
+									<img id="card_3" src="images/card.png">
+							</div>
+							<div style="float: left; margin-left: 14px; position: relative;font-size: 20px;color: #696a6c;width: 161px;height: 71px;margin-top: 15px;">
+								<div style="width: 161px;height:54px;text-align: left;word-wrap:break-word; word-break:break-all;display:block;">
+									第120手
+								</div>
+								<div style="position: absolute; top: 56px; width: 30px; height: 40;">
+									<div style="position: absolute;float: left;">
+										<img src="images/eye_small.png" />
+									</div>
+									<div style="position: absolute;left:30px;float: left;font-size: 20px;color:#5c5c5b">
+										198
+									</div>
+								</div>
+							</div>
+					</div>
+			</div>
+		</div>
+    </div>
+	<div id="downloadpanl"
+			style="position: fixed; bottom: 0px; z-index: 1001; width: 640px; height: 90px; margin-top: -3px;  text-align: center; ">
+			<img src="images/downloadbanner.png" onClick="window.location.href='http://www.pokermaster.com/download.php'"/>
+		<img src="images/close_ad.png" style="position: absolute;right: 0px; bottom: 5px;" onclick="closeAd()"/>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	function closeAd(){
+		$("#downloadpanl").hide();
+		var new_info_div_height = document.body.clientHeight-514;
+		document.getElementById("info_div").style.height=new_info_div_height+"px";
+	}
+	var info_div_height = document.body.clientHeight-90-514;
+// 	document.getElementById("info_div").innerHTML = "123" ;
+// 	document.write(document.getElementById("info_div").style.height);
+  	document.getElementById("info_div").style.height=info_div_height+"px";
+//   	document.getElementById("info_div").innerHTML = info_div_height+"px" ;
+  	document.getElementById("icon_play").style.left=document.documentElement.clientWidth/2-41+"px";
+	document.getElementById("icon_pause").style.left=document.getElementById("icon_play").style.left;
+	document.getElementById("icon_replay").style.left=document.getElementById("icon_play").style.left;
+    var imgUrl = 'images/icon_wx.png';
+    var lineLink = 'images/icon_wx.png';
+//     var lineLink = 'http://118.192.72.147/replay/index.php?id=<?php echo $history_id ?>';
+    var descContent = '精彩牌局想保留? 来德州扑克圈吧, 看看我这把牌打的如何!';
+    var shareTitle = '德扑圈牌谱';
+    var appid = 'wxc373d29b97145fd3';
+    function shareFriend() {
+        WeixinJSBridge.invoke('sendAppMessage',{
+            "appid": appid,
+            "img_url": imgUrl,
+            "img_width": "152",
+            "img_height": "152",
+            "link": lineLink,
+            "desc": descContent,
+            "title": shareTitle
+        }, function(res) {
+            //_report('send_msg', res.err_msg);
+        })
+    }
+    function shareTimeline() {
+        WeixinJSBridge.invoke('shareTimeline',{
+            "img_url": imgUrl,
+            "img_width": "152",
+            "img_height": "152",
+            "link": lineLink,
+            "desc": descContent,
+            "title": shareTitle
+        }, function(res) {
+               //_report('timeline', res.err_msg);
+        });
+    }
+    function shareWeibo() {
+        WeixinJSBridge.invoke('shareWeibo',{
+            "content": descContent,
+            "url": lineLink,
+        }, function(res) {
+            //_report('weibo', res.err_msg);
+        });
+    }
+    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        // 发送给好友
+        WeixinJSBridge.on('menu:share:appmessage', function(argv){
+            shareFriend();
+        });
+        // 分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function(argv){
+            shareTimeline();
+        });
+        // 分享到微博
+        WeixinJSBridge.on('menu:share:weibo', function(argv){
+            shareWeibo();
+        });
+    }, false);
+    // staticts
+  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	  	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  	  	ga('create', 'UA-9512593-3', 'ikta.com');
+  	  	ga('send', 'pageview');
+  	recordHelper.data = $.parseJSON('{"STAGE":{"POKERCARD":{"PREFLOP":{"PLAYER":[{"ACTION":"call 5","NUMBER":2},{"ACTION":"check 0","NUMBER":1}]},"TURN":{"PLAYER":[{"ACTION":"check 0","NUMBER":1},{"ACTION":"raise 20","NUMBER":2},{"ACTION":"call 20","NUMBER":1}],"POT":"20","CARD":"Ts"},"RIVER":{"PLAYER":[{"ACTION":"raise 50","NUMBER":1},{"ACTION":"raise 110","NUMBER":2},{"ACTION":"raise 710","NUMBER":1},{"ACTION":"call 650","NUMBER":2}],"POT":"60","CARD":"Qs"},"FLOP":{"PLAYER":[{"ACTION":"check 0","NUMBER":1},{"ACTION":"check 0","NUMBER":2}],"POT":"20","CARD":"3d 9d Kc"},"HOLECARD":{"CARD":"Jh 1s","NUMBER":1}},"TABLE":{"SEATS":9,"SEAT":[{"ICON":"images/13247_small_1433142212172.png","NAME":"阿冰","ID":"13247","CHIPS":"1115","NUMBER":1},{"ICON":"http://info.pokermate.net/data/2016/3/27/88120_small_1459093911930.png","NAME":"红牛all in","ID":"88120","CHIPS":"885","NUMBER":2}],"DEALER":1,"SBLIND":{"CHIPS":"5","NUMBER":2},"BBLIND":{"CHIPS":"10","NUMBER":1},"TITLE":"第3手"},"TIME":"2016-04-07 23:59:20","SHOWDOWN":{"PLAYER":[{"ACTION":"win 790","CARD":"Jh 1s","NUMBER":1},{"ACTION":"lose 0","CARD":"Jc 6s","NUMBER":2}]},"ID":3,"TITLE":"第3手"}}');
+	recordHelper.infoPanl = $('#infoPanl');
+	recordHelper.progress_bar = document.getElementById("progressBar");
+	recordHelper.interval.blindShow = 2000; //盲注展示
+    recordHelper.interval.holecardShow = 2000;//底牌显示
+    recordHelper.interval.preFlopShow = 1000;//翻牌前下注
+    recordHelper.interval.flopShow = 1000;//翻牌阶段
+    recordHelper.interval.turnShow = 1000;//转牌阶段
+    recordHelper.interval.riverShow = 1000;//和牌阶段
+    recordHelper.interval.showDown = 1000;//显示结果
+    recordHelper.interval.bet = 2000;//下注
+    iio.start(PokerPlayback,'pokerPanl');
+    var playing = true;
+    function canvasOnClick(){
+		if(needreplay){
+			recordHelper.replay();
+			$('#icon_mask').hide();
+			$('#icon_replay').hide();
+			needreplay = false;
+		}
+		else {
+			if(playing) {
+				recordHelper.pause();
+				$('#icon_mask').show();
+				$('#icon_pause').show();
+				playing = false;
+			}
+			else {
+				recordHelper.pause();
+// 				$('#icon_play').show();
+				$('#icon_mask').hide();
+				$('#icon_pause').hide();
+				playing = true;
+			}
+		}
+	}
+	if(localStorage.getItem("de6eb0a0ba32c4a9772227b99713b14774d7d8690293a750cbfddf2c735e5beb920ca655f17f844af94851f98ba740b5")){
+		document.getElementById("btn_like").src="http://upyun.pokermate.net/handplayer/res/zan_pressed.png";
+	}
+	function like() {
+            if(!localStorage.getItem("de6eb0a0ba32c4a9772227b99713b14774d7d8690293a750cbfddf2c735e5beb920ca655f17f844af94851f98ba740b5")){
+	            var xmlhttp;
+	            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+	              xmlhttp=new XMLHttpRequest();
+	            }
+	            else {// code for IE6, IE5
+	              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	            }
+	            xmlhttp.onreadystatechange=function() {
+	              if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+	                  if(xmlhttp.responseText) {
+	                	if(parseInt("1")<parseInt(xmlhttp.responseText)){
+							document.getElementById("like_num").innerHTML=xmlhttp.responseText;
+	                    	document.getElementById("btn_like").src="http://upyun.pokermate.net/handplayer/res/zan_pressed.png";
+	                    	localStorage.setItem("de6eb0a0ba32c4a9772227b99713b14774d7d8690293a750cbfddf2c735e5beb920ca655f17f844af94851f98ba740b5", "1");
+						}
+	                  }
+	              }
+	            }
+				xmlhttp.open("GET","/handplayer/like?url=de6eb0a0ba32c4a9772227b99713b14774d7d8690293a750cbfddf2c735e5beb920ca655f17f844af94851f98ba740b5&likenum=1",true);
+	            xmlhttp.send();
+            }
+    }
+</script>
+</html>

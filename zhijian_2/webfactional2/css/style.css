@@ -5,7 +5,7 @@ body {
 	font-size: 12px;
 	color: #353432;
 	/*background: #f9b71e;*/
-	background: #363533;
+	background: #00a99e;
 	
 }
 ul,
@@ -100,7 +100,7 @@ a {
 }
 .serviceWrap{
 	width: 100%;
-	height: 338px;
+	height: 318px;
 	margin: 0 auto;
 	background: #fff;
 	overflow: hidden;
@@ -134,13 +134,14 @@ a {
 }
 .serList-01B{
 	width: 162px;
+	line-height:16px;
 }
 .topTitle{
 	font-size: 34px;
 	line-height: 60px;
 	font-weight: normal;
 	text-align: left;
-	color:#5d372c;
+	color:#fff;
 }
 .aboutWrap{
 	width: 100%;
@@ -157,12 +158,12 @@ a {
 }
 .about p{
 	line-height:26px;
-	color:#5d372c;
+	color:#fff;
 	font-size: 18px;
 }
 .fullWrap{
 	width: 100%;
-	padding:10px 0 30px 0;
+	padding:10px 0 160px 0;
 	height: 435px;
 	margin: 0 auto;
 	background: #fff;
@@ -402,4 +403,4 @@ a {
 }
 
 .nav-links-wrapper a{color:#363533}
-#about hr{border:none;border-top:solid 3px #5d372c;}
+#about hr{border:none;border-top:solid 3px #fff;}
