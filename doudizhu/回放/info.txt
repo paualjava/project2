@@ -1,2 +1,18 @@
 22测试
 http://replay.pokermate.net:8080/handplayer/replay/?url=de6eb0a0ba32c4a9772227b99713b14774d7d8690293a750cbfddf2c735e5beb920ca655f17f844af94851f98ba740b5&from=singlemessage&isappinstalled=0
+
+
+从 2 到 14 其中(A是14)，颜色分别是:H (红桃), C (梅花),D (方块),S (黑桃), G(鬼，0小，1大)
+
+例如
+    "0": "H11",
+        "1": "D9",
+        "2": "S13",
+
+
+"10": "C14",
+
+
+H11  红桃J
+
+D9   方块 9

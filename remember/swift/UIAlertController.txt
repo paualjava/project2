@@ -1,0 +1,104 @@
+import UIKit  
+  
+class ViewController: UIViewController {  
+      
+    var alert1: UIAlertController!  
+    var alert2: UIAlertController!  
+    var actionSheet: UIAlertController!  
+      
+    override func viewDidLoad() {  
+  
+        // 定义一个按钮，显示最简单的 Alert  
+        let button1 = UIButton.buttonWithType(.System) as UIButton  
+        button1.frame = CGRectMake(self.view.frame.width/2 - 200, 50, 400, 50)  
+        button1.setTitle("最简单的 Alert", forState: UIControlState.Normal)  
+        button1.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)  
+        button1.tag = 1  
+          
+        // 定义一个按钮，显示带文本框的 Alert  
+        let button2 = UIButton.buttonWithType(.System) as UIButton  
+        button2.frame = CGRectMake(self.view.frame.width/2 - 200, 150, 400, 50)  
+        button2.setTitle("带文本框的 Alert", forState: UIControlState.Normal)  
+        button2.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)  
+        button2.tag = 2  
+          
+        // 定义一个按钮，显示上拉菜单  
+        let button3 = UIButton.buttonWithType(.System) as UIButton  
+        button3.frame = CGRectMake(self.view.frame.width/2 - 200, 250, 400, 50)  
+        button3.setTitle("上拉菜单", forState: UIControlState.Normal)  
+        button3.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)  
+        button3.tag = 3  
+          
+        // 定义 cancel、ok、save、delete、reset 的 UIAlertAction  
+        var cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.Cancel, handler: nil)  
+        var okAction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Default){  
+            (action: UIAlertAction!) -> Void in  
+            println("you choose ok")  
+        }  
+        var saveAction = UIAlertAction(title: "save", style: UIAlertActionStyle.Default){  
+            (action: UIAlertAction!) -> Void in  
+            println("you choose save")  
+        }  
+        var deleteAction = UIAlertAction(title: "delete", style: UIAlertActionStyle.Destructive){  
+            (action: UIAlertAction!) -> Void in  
+            println("you choose delete")  
+        }  
+        var resetAction = UIAlertAction(title: "reset", style: UIAlertActionStyle.Destructive){  
+            (action: UIAlertAction!) -> Void in  
+            println("you choose reset")  
+        }  
+          
+        // 1、初始化最简单的 Alert  
+        alert1 = UIAlertController(title: "simple alert", message: "this is a simple alert", 
+preferredStyle: UIAlertControllerStyle.Alert)  
+        alert1.addAction(cancelAction)  
+        alert1.addAction(resetAction)  
+        alert1.addAction(okAction)  
+          
+        // 2、初始化带文本框的 Alert  
+        alert2 = UIAlertController(title: "login alert", message: "please enter your name and password", preferredStyle: UIAlertControllerStyle.Alert)  
+        alert2.addTextFieldWithConfigurationHandler {  
+            (textField: UITextField!) -> Void in  
+            textField.placeholder = "name"  
+        }  
+        alert2.addTextFieldWithConfigurationHandler {  
+            (textField: UITextField!) -> Void in  
+            textField.placeholder = "password"  
+            textField.secureTextEntry = true  
+        }  
+        var loginAction = UIAlertAction(title: "login", style: UIAlertActionStyle.Default) {  
+            (action: UIAlertAction!) -> Void in  
+            var name = self.alert2.textFields!.first as UITextField  
+            var password = self.alert2.textFields!.last as UITextField  
+            println("name : \(name.text); password : \(password.text)")  
+        }  
+        alert2.addAction(loginAction)  
+          
+        // 3、初始化上拉菜单  
+        actionSheet = UIAlertController(title: "simple action sheet", message: "action sheet message", preferredStyle: UIAlertControllerStyle.ActionSheet)  
+        actionSheet.addAction(cancelAction)  
+        actionSheet.addAction(deleteAction)  
+        actionSheet.addAction(saveAction)  
+          
+        self.view.addSubview(button1)  
+        self.view.addSubview(button2)  
+        self.view.addSubview(button3)  
+        self.view.addSubview(button3)  
+    }  
+      
+    /// 按钮响应事件  
+    func buttonAction(sender: UIButton) {  
+        let num = sender.tag  
+        switch num {  
+        case 1:  
+            self.presentViewController(alert1, animated: true, completion: nil)  
+        case 2:  
+            self.presentViewController(alert2, animated: true, completion: nil)  
+        case 3:  
+            self.presentViewController(actionSheet, animated: true, completion: nil)  
+        default:  
+            break  
+        }  
+    }  
+      
+}  

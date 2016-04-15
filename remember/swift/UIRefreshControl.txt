@@ -1,0 +1,15 @@
+   var refreshControl = UIRefreshControl()  
+      
+    var dataArray:[AnyObject] = [AnyObject]()  
+      
+    override func viewDidLoad() {  
+        super.viewDidLoad()  
+        // Do any additional setup after loading the view.  
+        self.automaticallyAdjustsScrollViewInsets = false  
+          
+        //添加刷新  
+        refreshControl.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)  
+        refreshControl.attributedTitle = NSAttributedString(string: "松开后自动刷新")  
+        newsTableView.addSubview(refreshControl)  
+        refreshData()  
+    }  
