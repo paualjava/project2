@@ -204,23 +204,23 @@ a {
 	overflow: hidden;
 }
 .yy{
-	width: 850px;
+	width: 1000px;
 	margin: 0 auto;
-	padding-top: 55px;
+	padding-top: 65px;
 	color: #fff;
 	text-align: left;
 }
 .yyT ul{
-	width: 860px;
+	width: 1010px;
 	height: 140px;
 }
 .yyT ul li{
 	float: left;
-	height: 140px;
-	margin-right: 3px;
+	height: 170px;
+	margin-right: 8px;
 }
 .yyT ul li img{
-	height: 140px;
+	height: 170px;
 }
 .yy-more{
 	width: 850px;
@@ -263,21 +263,21 @@ a {
 }
 .linkWrap{
 	width: 100%;
-	height: 340px;
+	height: 800px;
 	margin: 0 auto;
 	padding:30px 0 30px 0;
 	background: #959595;
 	overflow: hidden;
 }
 .link{
-	width: 850px;
+	width: 950px;
 	margin: 0 auto;
-	padding-top: 68px;
+	padding-top: 128px;
 	overflow: hidden;
 	color: #fff;
 }
 .linkT{
-	width: 850px;
+	width: 950px;
 	height: 166px;
 	overflow: hidden;
 }
@@ -307,7 +307,7 @@ a {
 	height:16px;
 }
 .linkB{
-	width: 850px;
+	width: 950px;
 	height: 32px;
 	overflow: hidden;
 	margin-top: 6px;
@@ -413,3 +413,5 @@ a {
 
 .nav-links-wrapper a{color:#363533}
 #about hr{border:none;border-top:solid 3px #fff;}
+.yyT ul li.arrow img{height:30px;margin:70px 15px 0 0}
+.yyT ul li p{ position:relative;bottom:25px;left:0;width:170px;background:#000;color:#fff;height:25px;line-height:25px;text-align:center;overflow:hidden;filter:alpha(Opacity=80);-moz-opacity:0.8;opacity: 0.8;border-bottom:solid 4px #00a99e}
