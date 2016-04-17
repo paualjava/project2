@@ -171,19 +171,20 @@ a {
 	overflow: hidden;
 }
 .full{
-	width: 850px;
+	width: 950px;
 	margin: 0 auto;
 	padding-top: 55px;
 }
 .fullC{
-	width: 850px;
+	width: 950px;
 	padding-top: 30px;
 }
 .fullCL{
-	margin-right: 68px;
+	margin-right: 128px;
 }
 .fullCR{
 	width: 350px;
+	margin-top:25px;
 	overflow: hidden;
 }
 .fullCR ul li{
