@@ -296,12 +296,57 @@ With the lastest design idea and unique style of program planning，and we provi
 			<p>Tel ：021-31197428 / 29 / 30&nbsp;&nbsp;Fax ：021-31197428 - 802</p>
 			<p>Contact ：Wang Tao（Sir）&nbsp;&nbsp;&nbsp;&nbsp;Phone ：136-8182-2987</p>
 		</div>
+        
+        <div class="nav_line">
+  <div class="nav1"><img src="images2/nav1.png"/></div>
+  <div class="nav2"><img src="images2/nav1.png"/></div>
+  <div class="nav3"><img src="images2/nav1.png"/></div>
+  <div class="nav4"><img src="images2/nav1.png"/></div>
+  <div class="nav_text nav1_text">Main</div>
+  <div class="nav_text nav2_text">About us</div>
+  <div class="nav_text nav3_text">Service</div>
+  <div class="nav_text nav4_text">Cases & Contact</div>
+</div>
 	</div>
 </div>
 <div class="footerWrap">
 	<div class="footerCon">Copyright 2001-2016 | 沪ICP证080482号</div>
 </div>
 </div>
+<script type="application/javascript">
+$(".nav1").click(function ()
+{
+	$(".nav_line").find("img").attr("src","images2/nav1.png");
+	$(".nav_text").hide();
+	$(".nav1_text").show();
+	$(this).find("img").attr("src","images2/nav2.png");
+	$("html,body").animate({scrollTop:0},"slow");
+})
+$(".nav2").click(function ()
+{
+	$(".nav_line").find("img").attr("src","images2/nav1.png");
+	$(".nav_text").hide();
+	$(".nav2_text").show();
+	$(this).find("img").attr("src","images2/nav2.png");
+	$("html,body").animate({scrollTop:'800px'},"slow");
+	
+})
+$(".nav3").click(function ()
+{
+	$(".nav_line").find("img").attr("src","images2/nav1.png");
+	$(".nav_text").hide();
+	$(".nav3_text").show();
+	$("html,body").animate({scrollTop:'1700px'},"slow");
+})
+$(".nav4").click(function ()
+{
+	$(".nav_line").find("img").attr("src","images2/nav1.png");
+	$(".nav_text").hide();
+	$(".nav4_text").show();
+	$(this).find("img").attr("src","images2/nav2.png");
+	$("html,body").animate({scrollTop:'2300px'},"slow");
+})
+</script>
 <script type="text/javascript">
 $(function ()
 {

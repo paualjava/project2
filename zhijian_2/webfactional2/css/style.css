@@ -418,3 +418,15 @@ a {
 .yyT ul li.arrow img{height:30px;margin:70px 15px 0 0}
 .yyT ul li p{ position:relative;bottom:25px;left:0;width:170px;background:#000;color:#fff;height:25px;line-height:25px;text-align:center;overflow:hidden;filter:alpha(Opacity=80);-moz-opacity:0.8;opacity: 0.8;border-bottom:solid 4px #00a99e}
 .bg_line{background:url(../images2/bg_line.png?2) no-repeat;background-size:833px 30px;background-position:0 0;width:833px;height:2px;z-index:0}
+
+/**底部的line**/
+.nav_line{ background:#959595;height:2px;width:600px;margin:165px auto 0 auto;position:relative;font-size:12px;color:#eeec40;}
+.nav_line .nav1{ position:relative;top:-6px;left:-3px;}
+.nav_line .nav2{ position:relative;top:-18px;left:200px;}
+.nav_line .nav3{ position:relative;top:-30px;left:400px;}
+.nav_line .nav4{ position:relative;top:-42px;left:600px;}
+.nav_line .nav1_text{ position:relative;top:-71px;left:-8px;}
+.nav_line .nav2_text{ position:relative;top:-71px;left:180px;}
+.nav_line .nav3_text{ position:relative;top:-71px;left:390px;}
+.nav_line .nav4_text{ position:relative;top:-71px;left:576px;}
+.nav_line .nav_text{ display:none;}
