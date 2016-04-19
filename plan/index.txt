@@ -1,4 +1,4 @@
-﻿中国人民银行征信中心个人信用信息服务平台的官方网站 https://ipcrs.pbccrc.org.cn
+中国人民银行征信中心个人信用信息服务平台的官方网站 https://ipcrs.pbccrc.org.cn
 http://www.shcredit.gov.cn/
 	2.把云的那个程序看一下，本地装一个，然后试一下那个插件能不能用，不能用的话，自己写一个程序。
 	3.后台的那个测试一下
@@ -16,6 +16,20 @@ http://139.196.197.177:8098/  zbwyjb  adminyjb
 5.要写一个测试订单的程序，最好用swift来写  下单，一级下单，二级下单
 6.订单详情 使用优惠券，购买的商品，订单流程,订单的状态要做一下
 7.无法套上的列出来，这个我周五列出来----------明天要写出来
+
+setting  zh_address  zh_phone  zh_chuanzhen  zh_linkman zh_linkman_phone  en_address en_phone en_chuanzhen en_linkman en_linkman_phone
+
+setting_index  title  content
+about_us  info info_en
+
+service 
+title content
+
+service_item
+id,title
+
+cases
+id,title,pic,pic_big,cate,postdate,is_show,sort_order
 
 
 1.页面--商品不能滑动
