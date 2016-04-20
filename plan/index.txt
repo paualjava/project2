@@ -19,18 +19,9 @@ http://139.196.197.177:8098/  zbwyjb  adminyjb
 
 setting  zh_address  zh_phone  zh_chuanzhen  zh_linkman zh_linkman_phone  en_address en_phone en_chuanzhen en_linkman en_linkman_phone
 
-setting_index  title  content
-about_us  info info_en
+pocket_staff name,shop_name,phone,sale_count,sale_amount,invatation,invatation_person,rank,tag,department,status,postdate
 
-service 
-title content
-
-service_item
-id,title
-
-cases
-id,title,pic,pic_big,cate,postdate,is_show,sort_order
-
+pocket_invitation name,tag,department,info,sort_order,postdate
 
 1.页面--商品不能滑动
 2.如果只有2个商品，二维码有问题
