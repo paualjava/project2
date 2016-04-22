@@ -16,3 +16,19 @@ http://replay.pokermate.net:8080/handplayer/replay/?url=de6eb0a0ba32c4a9772227b9
 H11  红桃J
 
 D9   方块 9
+
+
+【翻牌】Flop，翻开前三张公共牌。
+
+【转牌】Turn，翻开第四张公共牌。
+
+【河牌】River，翻开最后一张公共牌。
+
+
+http://games.qq.com/a/20140401/010224.htm#p=1
+
+
+fold 0  等于弃牌
+check 0 是什么
+call 30 是什么
+raise 30 是什么
