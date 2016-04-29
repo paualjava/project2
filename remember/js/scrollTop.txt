@@ -1,0 +1,65 @@
+ document.getElementById('popMsg').style.top = (document.body.scrollTop + document.body.clientHeight - document.getElementById('popMsg').offsetHeight) + "px"
+
+
+//xhr
+ 	var xhr = XHR();
+ 	xhr.open("get","test.php?qs=true&userName=abc&pwd=123456",true);
+ 	xhr.onreadystatechange = function () {
+ 		if (xhr.readyState==4 && xhr.status ==200) {
+ 			alert(xhr.responseText);
+ 		}
+ 	};
+ 	xhr.send(null);
+ 	//PHP
+ 	print_r($_GET);
+
+
+
+	var xhr = XHR();
+ 	xhr.open("post","test.php",true);
+ 	xhr.onreadystatechange = function () {
+ 		if (xhr.readyState==4 && xhr.status ==200) {
+ 			alert(xhr.responseText);
+ 		}
+ 	};
+ 	//比GET请求多了一步
+ 	xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+ 	//另外,数据是通过send方法发送的
+ 	xhr.send("qs=true&userName=abc&pwd=123456");
+
+
+
+
+Ajax.call('/flow.php?step=add_to_cart', 'goods=' + obj2str(goods), addToCartResponsebuy, 'POST', 'JSON');
+
+
+var xmlHttp;
+
+    function createXmlHttpRequest()
+    {
+        if(window.XMLHttpRequest)
+        {
+            xmlHttp=new XMLHttpRequest();
+
+            if(xmlHttp.overrideMimeType)
+                {
+                    xmlHttp.overrideMimeType("text/xml");
+                }
+        }
+        else if(window.ActiveXObject)
+        {
+            try
+            {
+                xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");   
+            }
+            catch(e)
+            {
+                xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");   
+            }
+        }
+        if(!xmlHttp)
+        {
+            window.alert("你的浏览器不支持创建XMLhttpRequest对象");
+        }
+        return xmlHttp;
+    }

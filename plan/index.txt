@@ -10,26 +10,29 @@ http://www.helloswift.com.cn/swiftbase/2015/0422/3597.html
 http://139.196.197.177:8098/  zbwyjb  adminyjb
 1.商品要后台登陆了以后连接进来
 2.加星订单 
-3.外部订单号 商品价格
-4.回放的代码要修改一下 
-4.订单详情左边的菜单换一下 和 订单详情 顶部的状态
-4. http://localhost:8090/pocket/pocket_admin/goods_cat.php?act=add 这个样式有问题 
+3.员工招募的页面先放上去
+4. 德普的分享图片 和 页面上的一个图片 5/10  还有灰色的具体牌,底池(右上角没变化)
+4.评价管理  物流工具
+4.创建邀请的时候，生成二维码
 5.要写一个测试订单的程序，最好用swift来写  下单，一级下单，二级下单
-6.
+6.添加俱乐部管理员机制（权限可以转让，界面可能需要设计），只
+有管理员可获取所有的牌局的统计数据（报表概念）  			需要添加一个俱乐部管理员的字段，管理员可以通过俱乐部创始人任命 任命管理员需要一个接口	获取我的俱乐部信息club_my 跟俱乐部详情club_detail的接口都需要返回管理员这个字段 管理员的字段最好是一个数组	 创始人任命谁为管理员
+
+9.中午请假，五一早上
+9.3个接口
+9.之前的那个 要做一个程序，今天可能要上传
+
 7.无法套上的列出来，这个我周五列出来----------明天要写出来
 
 setting  zh_address  zh_phone  zh_chuanzhen  zh_linkman zh_linkman_phone  en_address en_phone en_chuanzhen en_linkman en_linkman_phone
 
-pocket_staff name,shop_name,phone,sale_count,sale_amount,invatation,invatation_person,rank,tag,department,status,postdate
 
-pocket_invitation name,tag,department,info,sort_order,postdate
 
 1.页面--商品不能滑动
 2.如果只有2个商品，二维码有问题
 
-问问换了哪个 页面的左边 或者我这边 看一下时间
-
-
+******************接口****************
+1.所有员工需要接口
 
 ******************zhijian****************
 1.网站后台规划一下，看需要哪些后台内容
