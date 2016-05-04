@@ -14,9 +14,25 @@ http://139.196.197.177:8098/  zbwyjb  adminyjb
 4. 德普的分享图片 和 页面上的一个图片 5/10  还有灰色的具体牌,底池(右上角没变化)
 4.评价管理  物流工具
 4.创建邀请的时候，生成二维码
+4.编辑商品的多图插件
+4.编辑商品的运费管理
 5.要写一个测试订单的程序，最好用swift来写  下单，一级下单，二级下单
 6.添加俱乐部管理员机制（权限可以转让，界面可能需要设计），只
 有管理员可获取所有的牌局的统计数据（报表概念）  			需要添加一个俱乐部管理员的字段，管理员可以通过俱乐部创始人任命 任命管理员需要一个接口	获取我的俱乐部信息club_my 跟俱乐部详情club_detail的接口都需要返回管理员这个字段 管理员的字段最好是一个数组	 创始人任命谁为管理员
+
+
+api_class.php api.php 接口的
+单页面管理 反馈管理 广告管理 缺提线管理 身份证只需要传一次吗 开户行填错的话 
+首页的广告滑动页面，不会自动滑动
+优惠券应该得有个框 输入优惠号
+首页缺购物车 另外有购物车的地方没有数量
+下订单的时候需要两次输入手机号
+订单提交成功的页面
+提现管理 ID uid tpye card 身份证图片 开户行 
+提线log。id uid money fetch_tpye 1为未审核 2为已提线 3为失败 time 
+设置 setting tixian_mima
+可提线等于 总额 - 已申请
+
 
 9.中午请假，周二早上
 9.
@@ -25,6 +41,8 @@ http://139.196.197.177:8098/  zbwyjb  adminyjb
 
 setting  zh_address  zh_phone  zh_chuanzhen  zh_linkman zh_linkman_phone  en_address en_phone en_chuanzhen en_linkman en_linkman_phone
 
+
+suggest  id,contact,info,type,postdate
 
 
 1.页面--商品不能滑动
