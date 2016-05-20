@@ -10,18 +10,34 @@ http://www.helloswift.com.cn/swiftbase/2015/0422/3597.html
 http://139.196.197.177:8098/  zbwyjb  adminyjb
 
 中午:
-6.添加俱乐部管理员机制（权限可以转让，界面可能需要设计），只
-有管理员可获取所有的牌局的统计数据（报表概念）  			需要添加一个俱乐部管理员的字段，管理员可以通过俱乐部创始人任命 任命管理员需要一个接口	获取我的俱乐部信息club_my 跟俱乐部详情club_detail的接口都需要返回管理员这个字段 管理员的字段最好是一个数组	 创始人任命谁为管理员
+微信绑定 图片验证码有问题  user.php?act=binding_weixin
+微信授权 token要缓存起来weixin.php
 
-广告管理后台+前台调用 
-广告管理编辑+搜索
-浏览器上用户注册+登陆+添加到购物车
-提现 + 身份证上传
-商品编辑
+buy.php里面暂时去掉了，
+/* 判断积分是否足够 */
+		/*if(!is_exchange( $user_id,$GLOBALS['db']->getOne($sql) )){
+		//ecs_header("Location: flow.php?step=cart\n");
+		show_message('对不起，您的积分不足以购买购物车中的积分商品，请删除后继续！');
+		exit;
+		}*/
+
+
+******************测试****************
+手机号已经被绑定过的测试
+good和user表，考虑下，是否有问题,又是user2,又是user
+
+http://www.wm18.com/ 要换成变量
+******************上线****************
+user_id
+用手机授权一个账号看看
+看不到用户是否登陆，看不到购物车
 
 myShop.html
 upId.html
 choiceBankCardList
+
+******************德普****************
+1.先在数据库里找到玩的几把，对比我的那个h5
 
 
 
@@ -39,9 +55,6 @@ choiceBankCardList
 
 api_class.php api.php 接口的
 单页面管理 反馈管理 广告管理 缺提线管理 身份证只需要传一次吗 开户行填错的话 
-优惠券应该得有个框 输入优惠号
-首页缺购物车 另外有购物车的地方没有数量
-订单提交成功的页面
 提现管理 ID uid tpye card 身份证图片 开户行 
 提线log。id uid money fetch_tpye 1为未审核 2为已提线 3为失败 time 
 设置 setting tixian_mima
@@ -50,7 +63,7 @@ api_class.php api.php 接口的
 
 9.
 
-7.无法套上的列出来，这个我周五列出来----------明天要写出来
+7.
 
 setting  zh_address  zh_phone  zh_chuanzhen  zh_linkman zh_linkman_phone  en_address en_phone en_chuanzhen en_linkman en_linkman_phone
 
@@ -64,8 +77,15 @@ suggest  id,contact,info,type,postdate
 ******************接口****************
 1.所有员工需要接口
 
-******************zhijian****************
-1.网站后台规划一下，看需要哪些后台内容
-2.vsftp配置 
+******************已完成****************
+			1.订单号要加密，不能要别人看到key值，不能遍
+2.
 
+******************上线****************
+建立文件夹 temp\compiled\pocket 
+建立文件夹 temp\compiled\pocket_admin
+建立文件夹 data\afficheimg_pocket
 
+******************上线****************
+做一个cms的企业站，用ci3
+另外做生成这个cms的程序，最好开放注册,先用原型工具生成
