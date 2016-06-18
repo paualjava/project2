@@ -384,3 +384,68 @@
 	返回值:
         
 	{"status":0,"message":"查询成功","data":["247"]}
+	
+	
+7.俱乐部详情批量查询
+{
+	action:'club_detail_list',
+	uid:'11'
+	token:'token'
+	cid_json_array:'[88,90,91,92,93,95]'
+}
+
+	返回值:
+        
+	array(5) {
+	  [0]=>
+	  array(24) {
+		["cid"]=>
+		string(2) "88"
+		["name"]=>
+		string(12) "笑傲江湖"
+		["logo"]=>
+		string(0) ""
+		["desc"]=>
+		string(0) ""
+		["region_id"]=>
+		string(2) "25"
+		["province"]=>
+		string(1) "0"
+		["city"]=>
+		string(1) "0"
+		["district"]=>
+		string(1) "0"
+		["uid_create"]=>
+		string(2) "99"
+		["manager_list"]=>
+		string(0) ""
+		["add_time"]=>
+		string(19) "2016-02-26 22:11:15"
+		["money"]=>
+		string(1) "0"
+		["wallpapers"]=>
+		string(0) ""
+		["member_max"]=>
+		string(2) "50"
+		["member_current"]=>
+		string(1) "1"
+		["leixing"]=>
+		string(1) "1"
+		["parent_id"]=>
+		string(1) "1"
+		["region_name"]=>
+		string(6) "上海"
+		["region_type"]=>
+		string(1) "1"
+		["agency_id"]=>
+		string(1) "0"
+		["is_hot"]=>
+		string(1) "1"
+		["hot_sort_id"]=>
+		string(1) "2"
+		["users"]=>
+  		array(1) {}
+		["creater"]=>
+		array(1) {}
+	  }
+	}
